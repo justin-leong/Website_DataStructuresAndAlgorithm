@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures" href="#data structures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/index.html">LinkedLists</a>
+                    <a href="#stacks and queues">Stacks and Queues</a>
+                    <a href="#trees">Trees</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms" href="#algorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="#bubble sort">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="#graph: DFS">Graph: DFS</a>
+                    <a href="#graph: BFS">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects" href="#projects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        LinkedList Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">LinkedLists</h1>
+            
+            <div class="paragraph">
+                A LinkedList is a data structure that represents a list of items that are connected linearly. The items in the list are represented by nodes that contain data such as strings, integers, characters, or objects. The data can be accessed by traversing each node in the sequence, starting at the head position, until reaching the desired node location. The LinkedList data structure can be created as either a singly or doubly LinkedList. The difference between a singly LinkedList and a doubly LinkedList is whether a node has access to only the next node in the list or if a node has access to both the previous and next node. A LinkedList with access to only the next node in the list is referred to as a singly LinkedList while nodes having access to their previous node makes the list a doubly LinkedList.
+            </div>
+            
+            <h1 class="headerLeft">Singly LinkedList</h1>
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/LinkedLists/linkedlist_singlylinkedlist.png">
+            </div>
+            
+            <h1 class="headerLeft">Doubly LinkedList</h1>
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/LinkedLists/linkedlist_doublylinkedlist.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Code Implementation</h1>
+            
+            <div class="paragraph">
+                In the singly LinkedList example, we have four node objects that each contain variables to store their integer value as well as a reference to the next node object in the list. The last node in the list is a special case since there is no object to point to, therefore its next reference will point to null. A LinkedList also requires a "Head" which provides a reference to the first node object in order to gain access to the list.
+            </div>
+            
+            <div class="paragraph">
+                To begin the implementation of a LinkedList we must first create a class that will act as a container which holds the nodes in the list. We will initialize this class as 'LinkedList' and configure the class as paramatizable to allow the user to specify the type of data being stored in the list. 
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> LinkedList&ltT&gt{
+                <br>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Once we have created our LinkedList class, we will need a way to create the nodes in our list. We can create these node objects by implementing a subclass called Node. The Node class will have a variable called 'data' which stores the value of the particular object and a Node variable called 'next' that points to the next node in the list. We will define a constructor inside of the Node class that will automatically assign the data variable to the value passed in by the user.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> LinkedList&ltT&gt{
+                <br>
+                <p class="indent1 codePurple">public class</p> Node{
+                <br>
+                <p class="indent2">T data;</p>
+                <br>
+                <p class="indent2">Node next;</p>
+                <br><br>
+                <p class="indent2 codePurple">public</p> Node(T data){
+                <br>
+                <p class="indent3 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                To finish off the basic structure of the LinkedList, we will need a Node variable in the LinkedList class called 'head' which will point to the first node in the list. Without the head variable we will have no way of accessing the nodes in the list and thus this variable is very important as it is used in many of the LinkedList methods that we will be implementing next. 
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> LinkedList&ltT&gt{
+                <br>
+                <p class="indent1 codePurple">public class</p> Node{
+                <br>
+                <p class="indent2">T data;</p>
+                <br>
+                <p class="indent2">Node next;</p>
+                <br><br>
+                <p class="indent2 codePurple">public</p> Node(T data){
+                <br>
+                <p class="indent3 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">Node head;</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We have completed the basic structure of a LinkedList, however this code is yet to be useful since we are lacking a few of the basic methods that allow us to add and remove items from the list.
+            </div>
+            
+            <div class="paragraph">
+                We will be implementing four methods that are critical to the functionality of the LinkedList. These four functions are described below:
+                <br><br>
+                <p class="codePurple">isEmpty():</p> Returns whether a list is empty or not 
+                <br><br>
+                <p class="codePurple">add(T data):</p> Adds a new item to the end of the LinkedList 
+                <br><br>
+                <p class="codePurple">remove():</p> Removes and returns the oldest item added to the LinkedList
+                <br><br>
+                <p class="codePurple">contains(T data):</p> Returns whether the lookup data exists in the list 
+            </div>
+            
+            <h2 class="headerCenter doubleline">isEmpty() Method</h2>
+            
+            <div class="paragraph">
+                The isEmpty() method is a very straight forward method. If our list is empty then that means the head node is not assigned to a value. The method will check to see what the head node is assigned to and return whether the list is empty or not.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public boolean</p> isEmpty(){
+                <br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return false</p>;
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">add() Method</h2>
+            
+            <div class="paragraph">
+                The add() method allows us to create nodes and connect these nodes to our existing list. The logic behind this method is to traverse the entire list until reaching the last node in the list. We can then append this node to the end of the list. To determine if we have reached the last item in the list we can walk through each node until we find that the next node is equal to null. If the list is completely empty (head == null) then we know that we can assign head to this new node.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public void</p> add(T data){
+                <br>
+                <p class="indent1">Node newNode =  <p class="codePurple">&nbsp;new</p></p> Node(data);
+                <br><br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">head = newNode;</p>
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">Node currentNode = head;</p>
+                <br>
+                <p class="indent1 codePurple">while</p>(currentNode.next != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">currentNode = currentNode.next;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">currentNode.next = newNode;</p>
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">remove() Method</h2>
+            
+            <div class="paragraph">
+                The remove() method deletes the oldest item in the list which also happens to be whichever node the head node is pointed to. To remove a node from the list all we have to do is move the head position to point to the next node in the sequence. Prior to deleting the node, we want to store this in a variable so that we can return it at the end of the method. If the list is completely empty and a user attempts to remove an item, the method will automatically return null and exit.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public</p> Node remove(){
+                <br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return null</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">Node removedHead = head;</p>
+                <br>
+                <p class="indent1">head = head.next;</p>
+                <br><br>
+                <p class="indent1 codePurple">return</p> removedHead;
+                <br>
+                }
+            </div>
+        
+            <br><br>
+            <h2 class="headerCenter doubleline">contains() Method</h2>
+            
+            <div class="paragraph">
+                The contains() method is very similar to the add() method as we are traversing through each of the nodes in the list, however before moving onto the next node we compare whether the current node's data matches with the lookup parameter. If we traverse through the entire list and are unable to find the data we are looking for then we return false.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public boolean</p> contains(T data){
+                <br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">Node currentNode = head;</p>
+                <br>
+                <p class="indent1 codePurple">while</p>(currentNode != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">if</p>(currentNode.data == data){
+                <br>
+                <p class="indent3 codePurple">return true</p>;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent2">currentNode = currentNode.next;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return false</p>;
+                <br>
+                }
+            </div>
+        </div>
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Advantages and Disadvantages Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+              <h1 class="headerCenter">Advantages and Disadvantages</h1>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="tableHeader">Advantages</td>
+                            <td class="tableHeader">Disadvantages</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tableEntry">
+                                &bull;&nbsp;When prepending an item to the list, this operation can be performed in constant time O(1) which is extremely quick and efficient
+                                
+                                <br><br>
+                                
+                                &bull;&nbsp;When removing an item from the start of the list, this operation can be performed in constant time O(1) which is extremely quick and efficient
+                            </td>
+                            
+                            <td class="tableEntry">
+                                &bull;&nbsp;Searching for an item in the list requires walking through each of the nodes starting from the head until reaching the desired node. This causes the lookup time to be of linear time complexity O(n), the worst-case scenario being where the lookup item is at the absolute end of the list
+                                
+                                <br><br>
+                                
+                                &bull;&nbsp;Appending an item to the list takes linear time O(n) since one must walk through each of the nodes in the list until reaching the end of the list where one can then add the new item
+                                
+                                <br><br>
+                                
+                                &bull;&nbsp;Removing an item from the end of the list requires traversing each of the nodes resulting in a linear time complexity. However, LinkedLists are generally used with the concept that the first item in would be the first item out (FIFO) which is what makes LinkedLists powerful.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+      <!-- Footer main -->
+      <section class="ft-main">
+        <div class="ft-main-item">
+          <h2 class="ft-title">About</h2>
+          <ul>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="ft-main-item">
+          <h2 class="ft-title">Resources</h2>
+          <ul>
+            <li><a href="#">Languages</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Top Accounts</a></li>
+            <li><a href="#">Webinars</a></li>
+          </ul>
+        </div>
+        <div class="ft-main-item">
+          <h2 class="ft-title">Contact</h2>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Sales</a></li>
+            <li><a href="#">Advertise</a></li>
+          </ul>
+        </div>
+        <div class="ft-main-item">
+          <h2 class="ft-title">Stay Updated</h2>
+          <p>Subscribe to our newsletter to get our latest news.</p>
+          <form>
+            <input type="email" name="email" placeholder="Enter email address">
+            <input type="submit" value="Subscribe">
+          </form>
+        </div>
+      </section>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>
+    </footer>
+
+    <script src="roadmap.js"></script>
+	
+</body>
+</html>
