@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures" href="#data structures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/index.html">LinkedLists</a>
+                    <a href="#stacks and queues">Stacks and Queues</a>
+                    <a href="#trees">Trees</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms" href="#algorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="#bubble sort">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="#graph: DFS">Graph: DFS</a>
+                    <a href="#graph: BFS">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects" href="#projects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Stacks and Queues Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Stacks and Queues</h1>
+            
+            <div class="paragraph">
+                Stacks and queues are two separate data structures that are built off a similar concept where the data being stored is in the format of a contiguous list. Data can be added/pushed and removed/popped from both the stack and queue, however the main difference between the two data structures is the sequence of how the data is pushed or popped from the list.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                A stack data structure can be compared to a physical stack of plates where each new plate added to the stack must be placed on top of the last plate added. When a plate is taken off the stack it must be removed from the top or else the entire stack will collapse. This concept is represented by the term ‘LIFO’ (Last In First Out) because the last item added to the stack will be the first item removed. Data that is pushed to the stack is added to the top of the list and when data is popped from the stack then the top most item in the list will be removed.
+            </div>
+            
+            <div class="sectionImageTall">
+                <img src="../Images/DataStructures/StacksAndQueues/stackandqueues_stack_lifo.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/StacksAndQueues/stacksandqueues_stack_push.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/StacksAndQueues/stackandqueues_stack_pop.png">
+            </div>
+            
+            <div class="paragraph">
+                A queue data structure on the other hand can be visualized as a line of people ordering food at a fast food restaurant. The first person that enters the line waits until there is an available employee to take their order and every subsequent person that enters the restaurant will join the end of the line. The person who has waited the longest in the line will be the next person that exits the line. This concept is called ‘FIFO’ (First In First Out) because the oldest item in the queue will be the next item to be removed from the list. Data that is pushed to the queue is added to the end of the list and when data is popped from the queue then the data at the head of the list will be removed.
+            </div>
+            
+            <div class="sectionImageTall">
+                <img src="../Images/DataStructures/StacksAndQueues/stackandqueues_queue_fifo.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/StacksAndQueues/stackandqueues_queue_push.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/StacksAndQueues/stackandqueues_queue_pop.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation - Stack Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Stack - Code Implementation</h1>
+            
+            <div class="paragraph">
+                To begin the implementation of the stack data structure, we must first create a class called 'Stack' which will hold the objects in the list that make up the stack. The Stack class will also contain an instance variable called 'top' which denotes which item is at the top of the list. We will keep the type of data in the Stack class generic which allows the instance objects to contain different types of data such as integers, strings, characters, etc.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> Stack&ltT&gt{
+                <br>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Once we have created our Stack class, we will need a way to create the containers that store the data and ultimately make up the list. We can create these containers by implementing a subclass called Node which will allow us to create node instances that represent the stack containers. The Node class will have a variable called 'data' which stores the value of the particular object and a Node variable called 'next' that points to the next node in the list. We will define a constructor inside of the Node class that will automatically assign the data variable to the value passed in by the user.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> Stack&ltT&gt{
+                <br>
+                <p class="indent1 codePurple">public class</p> Node{
+                <br>
+                <p class="indent2">T data;</p>
+                <br>
+                <p class="indent2">Node next;</p>
+                <br><br>
+                <p class="indent2 codePurple">public</p> Node(T data){
+                <br>
+                <p class="indent3 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                To finish off the basic structure of the stack, we will need a Node variable in the Stack class called 'top' which will point to the most recent node added to the list. Without the top node we will have no way of accessing the other nodes in the list and is also a way for us to track which item should be removed next.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> Stack&ltT&gt{
+                <br>
+                <p class="indent1 codePurple">public class</p> Node{
+                <br>
+                <p class="indent2">T data;</p>
+                <br>
+                <p class="indent2">Node next;</p>
+                <br><br>
+                <p class="indent2 codePurple">public</p> Node(T data){
+                <br>
+                <p class="indent3 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">Node top;</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We have completed the basic structure of a Stack, however we are missing a few of the basic methods that allow us to add and remove items from the list.
+            </div>
+            
+            <div class="paragraph">
+                Four basic methods involved with the stack data structure is to add items, remove items, check if the stack is empty, and to retrive the top item in the stack. These four functions are described below:
+                <br><br>
+                <p class="codePurple">isEmpty():</p> Returns whether a list is empty or not 
+                <br><br>
+                <p class="codePurple">push(T data):</p> Adds a new item to the top of the stack 
+                <br><br>
+                <p class="codePurple">pop():</p> Removes and returns the top item in the stack
+                <br><br>
+                <p class="codePurple">peek():</p> Returns the value of the top item in the stack 
+            </div>
+            
+            <h2 class="headerCenter doubleline">isEmpty() Method</h2>
+            
+            <div class="paragraph">
+                The isEmpty() method is a very straight forward method. If our list is empty then that means the top node has not been assigned to a value. The method will check to see what the top node is assigned to and return whether the list is empty or not.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public boolean</p> isEmpty(){
+                <br>
+                <p class="indent1 codePurple">if</p>(top == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return false</p>;
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">push(T data) Method</h2>
+            
+            <div class="paragraph">
+                The push() method allows us to create nodes and connect these nodes to our existing list. The logic behind this method is to connect the new node to the current top node and to set the new node to the new top. If the list is completely empty (top == null) then we know that we can assign the new node to top since this will be the first item in the stack.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public void</p> push(T data){
+                <br>
+                <p class="indent1">Node newNode =  <p class="codePurple">&nbsp;new</p></p> Node(data);
+                <br><br>
+                <p class="indent1 codePurple">if</p>(top == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">top = newNode;</p>
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">newNode.next = top;</p>
+                <br>
+                <p class="indent1">top = newNode;</p>
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">pop() Method</h2>
+            
+            <div class="paragraph">
+                The pop() method deletes the most recent item added to the stack which is whichever node is assigned to the top variable. To remove a node from the stack, all we have to do is move the top variable to point to the next node in the stack sequence. Prior to deleting the node, we want to store the data in the node in a variable so that we can return it at the end of the method. If the stack is completely empty and a user attempts to remove an item, the method will automatically return null and exit.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public</p> T pop(){
+                <br>
+                <p class="indent1 codePurple">if</p>(top == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return null</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">T removedData = top.data;</p>
+                <br>
+                <p class="indent1">top = top.next;</p>
+                <br><br>
+                <p class="indent1 codePurple">return</p> removedData;
+                <br>
+                }
+            </div>
+        
+            <br><br>
+            <h2 class="headerCenter doubleline">peek() Method</h2>
+            
+            <div class="paragraph">
+                The peek() method is very straight forward since we have access to the top variable. All we have to do is return the data contained in the top node assumming that the stack is not empty. If the stack is empty we will return null.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public</p> T peek(){
+                <br>
+                <p class="indent1 codePurple">if</p>(top == <p class="codePurple">null</p>) <p class="codePurple">return null</p>;
+                <br><br>
+                <p class="indent1 codePurple">return</p> top.data;
+                <br>
+                }
+            </div>
+        </div>
+    
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation - Queue Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Queue - Code Implementation</h1>
+            
+            <div class="paragraph">
+                The queue has a very similar code structure to the stack. The only difference is that in the Queue class we will replace the node variable 'top' with two node variables called 'head' and 'tail'. These two variables speak for themselves as the head variable will point to the first node in the list while the tail variable will be assigned to the last node in the list.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> Queue&ltT&gt{
+                <br>
+                <p class="indent1 codePurple">public class</p> Node{
+                <br>
+                <p class="indent2">T data;</p>
+                <br>
+                <p class="indent2">Node next;</p>
+                <br><br>
+                <p class="indent2 codePurple">public</p> Node(T data){
+                <br>
+                <p class="indent3 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">Node head;</p>
+                <br>
+                <p class="indent1">Node tail;</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Similar to a stack, we have the same four basic methods that need to be included in this Queue class however the push() and pop() methods will slightly different in implementation to satisfy the concept of FIFO. These four functions are described below:
+                <br><br>
+                <p class="codePurple">isEmpty():</p> Returns whether a list is empty or not 
+                <br><br>
+                <p class="codePurple">push(T data):</p> Adds a new item to the end of the queue 
+                <br><br>
+                <p class="codePurple">pop():</p> Removes and returns the value of the head node in the queue
+                <br><br>
+                <p class="codePurple">peek():</p> Returns the value of the head node in the queue
+            </div>
+            
+            <h2 class="headerCenter doubleline">isEmpty() Method</h2>
+            
+            <div class="paragraph">
+                The isEmpty() method is a very straight forward method. If our list is empty then that means both the head and tail nodes have not been assigned a value. The method only needs to check if either one of the head or tail nodes is null, however we can add some safety to our code by checking to make sure they are both null in cases we forgot to update these node variables in the push and pop methods.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public boolean</p> isEmpty(){
+                <br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p> && tail == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return false</p>;
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">push(T data) Method</h2>
+            
+            <div class="paragraph">
+                The push() method allows us to create nodes and connect these nodes to the end of the list. The logic behind this method is to connect the existing tail node to the new node and update the tail variable to point to the new node. If the list is completely empty (head == null && tail == null) then we know that both the head and tail variable must be assigned to this new node.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public void</p> push(T data){
+                <br>
+                <p class="indent1">Node newNode =  <p class="codePurple">&nbsp;new</p></p> Node(data);
+                <br><br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p> && tail == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">head = newNode;</p>
+                <br>
+                <p class="indent2">tail = newNode;</p>
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">tail.next = newNode;</p>
+                <br>
+                <p class="indent1">tail = newNode;</p>
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">pop() Method</h2>
+            
+            <div class="paragraph">
+                The pop() method deletes the node that the head variable is pointing to. To remove a node from the queue, all we have to do is move the head variable to point to the next node in the list. Prior to deleting the node, we want to store the data contained in the node in a variable so that we can return it at the end of the method. If the node being deleted happens to be the only node in the queue then we must also update the tail variable to point to null.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public</p> T pop(){
+                <br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p> && tail == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return null</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">T removedData = head.data;</p>
+                <br>
+                <p class="indent1">head = head.next;</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">tail =</p> <p class="codePurple">null</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return</p> removedData;
+                <br>
+                }
+            </div>
+        
+            <br><br>
+            <h2 class="headerCenter doubleline">peek() Method</h2>
+            
+            <div class="paragraph">
+                The peek() method is very straight forward since we have access to the head variable. All we have to do is return the data contained in the head node assumming that the queue is not empty. If the queue is empty we will return null.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">public</p> T peek(){
+                <br>
+                <p class="indent1 codePurple">if</p>(head == <p class="codePurple">null</p>) <p class="codePurple">return null</p>;
+                <br><br>
+                <p class="indent1 codePurple">return</p> head.data;
+                <br>
+                }
+            </div>
+        </div>
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Advantages and Disadvantages Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+              <h1 class="headerCenter">Advantages and Disadvantages</h1>
+            
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="tableHeader">Advantages</td>
+                            <td class="tableHeader">Disadvantages</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tableEntry">
+                                &bull;&nbsp;Pushing/adding data into both stacks and queues are performed in constant time O(1) which is extremely quick and efficient
+                                
+                                <br><br>
+                                
+                                &bull;&nbsp;Popping/removing data from both stacks and queues are performed in constant time O(1) which is extremely quick and efficient
+                            </td>
+                            
+                            <td class="tableEntry">
+                                &bull;&nbsp;Searching for an item in the list requires walking through each of the nodes starting from either the top node (if dealing with a stack) or the head node (if dealing with a queue) until reaching the desired node. This causes the lookup time to be of linear time complexity O(n), the worst-case scenario being where the lookup item is at the absolute end of the list
+                                
+                                <br><br>
+                                
+                                &bull;&nbsp;Data from the middle of the list cannot be removed in either a stack or queue due to the fact that these data structures work off the concept of LIFO and FIFO respectively
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>
