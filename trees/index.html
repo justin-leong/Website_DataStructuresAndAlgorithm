@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures" href="#data structures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/index.html">LinkedLists</a>
+                    <a href="#stacks and queues">Stacks and Queues</a>
+                    <a href="#trees">Trees</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms" href="#algorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="#bubble sort">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="#graph: DFS">Graph: DFS</a>
+                    <a href="#graph: BFS">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects" href="#projects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Trees Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Trees</h1>
+            
+            <div class="paragraph">
+                Trees are an important type of data structure that can optimize the amount of time spent searching for a piece of data. A tree can be visualized as a hierarchy of nodes where the top node is the root of the tree. The root node can branch off to multiple nodes which all represent child nodes. The child nodes can also further branch off having their own children nodes. A node that does not contain any child nodes is referred to as a “leaf” node. A node above a child node is often referred to as the parent for that subsection of the tree.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_generic_tree.png">
+            </div>
+            
+            <div class="paragraph">
+                In many programming examples, the trees are defined to be binary trees which sets the constraint that all of the nodes in the tree can only have either 0, 1, or 2 child nodes (hence the term binary). 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_binarytree.png">
+            </div>
+            
+            <div class="paragraph">
+                Furthermore, a binary tree can be even more specialized if it is a binary search tree. A binary search tree must not only adhere to the constraints of a binary tree, but it must also fit the property that all the nodes on the left side must have a smaller value than the parent node and all the nodes on the right side must have a larger value than the parent node. This constraint must be followed by all the nodes in the tree.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_binarysearchtree.png">
+            </div>
+            
+            <div class="paragraph">
+                Along with understanding how the tree data structure works comes with knowing how to access the data contained in each node. There are many different techniques that can be implemented to visit all of the nodes in a tree, however the three most common methods are in-order traversal, pre-order traversal, and post-order traversal. The output of each of these traversal techniques are demonstrated on the example tree below. Note that the example tree is a binary search tree, however it is not essential for it to be one in order to run the traversals.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_traversal_tree.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_inorder_traversal_output.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_preorder_traversal_output.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_postorder_traversal_output.png">
+            </div>
+            
+            <div class="paragraph">
+                The algorithms for all three of the  traversals can be found in the code implementation section below. 
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation - Binary Search Tree Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Binary Search Tree - Code Implementation</h1>
+            
+            <div class="paragraph">
+                One of the most common types of tree data structures are binary search trees and we will be implementing this type of tree in the code below. As we can recall, a binary search tree is a tree where the each node has up to two child nodes and that the values of the left nodes are less than the parent node while the values of the right nodes are greater than the parent node.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The structure of a tree is very similar to other data structures such as a LinkedList since they both contain nodes that link to other nodes. Trees however may not be linear since the parent node has access to a left node and right node. We will create the "TreeNode" class which resembles a simple node class, however it will contain instances for the left and right node variables.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">class</p> TreeNode{
+                <br>
+                <p class="indent1">TreeNode left;</p>
+                <br>
+                <p class="indent1">TreeNode right;</p>
+                <br>
+                <p class="indent1 codePurple">int</p> data;
+                <br><br>
+                <p class="indent1 codePurple">public</p> TreeNode(<p class="codePurple">int</p> data){
+                <br>
+                <p class="indent2 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                To finish off the basic structure of the binary search tree, we will add a method which will allow us to add data to the tree. This method is pretty straight forward as it will check to see if the new value we want to add is less than or greater than our root node's value. If the value is less than the root node it will check to see if the left node is occupied and if it is then a recursive call to the function will be made passing in the left node. If the left node is not occupied then the value will be placed in that node location. The same logic is applied to the right side of the tree if the new value is greater than the root node's value.  
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">class</p> TreeNode{
+                <br>
+                <p class="indent1">TreeNode left;</p>
+                <br>
+                <p class="indent1">TreeNode right;</p>
+                <br>
+                <p class="indent1 codePurple">int</p> data;
+                <br><br>
+                <p class="indent1 codePurple">public</p> TreeNode(<p class="codePurple">int</p> data){
+                <br>
+                <p class="indent2 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">public void</p> add(<p class="codePurple">int</p> data){
+                <br>
+                <p class="indent2 codeComment">// Check if data belongs on left side of tree</p>
+                <br>
+                <p class="indent2 codePurple">if</p>(data &lt; <p class="codePurple">this</p>.data){
+                <br>
+                <p class="indent3 codePurple">if</p>(left == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent4">left =</p> <p class="codePurple">new</p> TreeNode(data);
+                <br>
+                <p class="indent3">}</p><p class="codePurple">else</p>{
+                <br>
+                <p class="indent4">left.add(data);</p>
+                <br>
+                <p class="indent3">}</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2 codeComment">// Check if data belongs on right side of tree</p>
+                <br>
+                <p class="indent2 codePurple">if</p>(data &gt; <p class="codePurple">this</p>.data){
+                <br>
+                <p class="indent3 codePurple">if</p>(right == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent4">right =</p> <p class="codePurple">new</p> TreeNode(data);
+                <br>
+                <p class="indent3">}</p><p class="codePurple">else</p>{
+                <br>
+                <p class="indent4">right.add(data);</p>
+                <br>
+                <p class="indent3">}</p>
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            
+        </div>
+    
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Binary Search Tree - Example Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Binary Search Tree Example</h1>
+            
+            <div class="paragraph">
+                With the binary search tree class in place, we can walk through an example in our main function. The first step in creating our tree is to create an instance of the TreeNode class. This will be the root of our tree and all other values will be an extension from this node. 
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">TreeNode root =</p> <p class="codePurple">new</p> TreeNode(10);
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_binarysearchtree_root.png">
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                We will now add a left child node to the graph by calling the add() method that we previously implemented and passing in a parameter containing the integer 5. We know that this will be a left node because 5 is less than the root node value of 10.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">TreeNode root =</p> <p class="codePurple">new</p> TreeNode(10);
+                <br><br>
+                <p class="indent1">root.add(5);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_binarysearchtree_add5.png">
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Similarly we can now add a right node by calling the add() method with a parameter value greater than 10. We will call the add() method passing a value of 15.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">TreeNode root =</p> <p class="codePurple">new</p> TreeNode(10);
+                <br><br>
+                <p class="indent1">root.add(5);</p>
+                <br>
+                <p class="indent1">root.add(15);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_binarysearchtree_add15.png">
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                We can continue to add nodes to our tree by calling the add() method. Let's add the values 1, 7, 13, and 20 in that respective order. 
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">TreeNode root =</p> <p class="codePurple">new</p> TreeNode(10);
+                <br><br>
+                <p class="indent1">root.add(5);</p>
+                <br>
+                <p class="indent1">root.add(15);</p>
+                <br>
+                <p class="indent1">root.add(1);</p>
+                <br>
+                <p class="indent1">root.add(7);</p>
+                <br>
+                <p class="indent1">root.add(13);</p>
+                <br>
+                <p class="indent1">root.add(20);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Trees/tree_binarysearchtree_addlevel3.png">
+            </div>
+        </div>
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Traversals Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Traversals</h1>
+            
+            <div class="paragraph">
+                Three common traversal methods that we will implement are the in-order traversal, pre-order traversal, and post-order traversal. The code for traversing a tree is very simple and the only difference between the three traversal methods are the order in which the code is written.
+            </div>
+            
+            <h1 class="headerLeft">In-Order Traversal</h1>
+            <div class="paragraph">
+                The in-order traversal will print the left node, parent node, then right node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
+            </div>
+            <div class="code codeWide">
+                <p class="indent codePurple">public static void</p> inOrderTraversal(TreeNode parent){
+                <br>
+                <p class="indent1 codePurple">if</p>(parent.left != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">inOrderTraversal(parent.left);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">System.out.print(parent.data + " ");</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(parent.right != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">inOrderTraversal(parent.right);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                <p class="indent">}</p>
+            </div>
+            <br>
+            <div class="code codeWide">
+                <p class="indent">Output:</p>
+                <br><br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 5 7 10 13 15 20 </p>
+                <br><br>
+            </div>
+            
+            <div class="paragraph"></div>
+            
+            <h1 class="headerLeft">Pre-Order Traversal</h1>
+            <div class="paragraph">
+                The pre-order traversal will print the parent node, left node, then right node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
+            </div>
+            <div class="code codeWide">
+                <p class="indent codePurple">public static void</p> preOrderTraversal(TreeNode parent){
+                <br>
+                <p class="indent1">System.out.print(parent.data + " ");</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(parent.left != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">preOrderTraversal(parent.left);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(parent.right != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">preOrderTraversal(parent.right);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                <p class="indent">}</p>
+            </div>
+            <br> 
+            <div class="code codeWide">
+                <p class="indent">Output:</p>
+                <br><br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 5 1 7 15 13 20 </p>
+                <br><br>
+            </div>
+            
+            <div class="paragraph"></div>
+            
+            <h1 class="headerLeft">Post-Order Traversal</h1>
+            <div class="paragraph">
+                The post-order traversal will print the left node, right node, then parent node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
+            </div>
+            <div class="code codeWide">
+                <p class="indent codePurple">public static void</p> postOrderTraversal(TreeNode parent){
+                <br>
+                <p class="indent1 codePurple">if</p>(parent.left != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">postOrderTraversal(parent.left);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(parent.right != <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2">postOrderTraversal(parent.right);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">System.out.print(parent.data + " ");</p>
+                <br>
+                <p class="indent">}</p>
+            </div>
+            
+            <br>
+            
+            <div class="code codeWide">
+                <p class="indent">Output:</p>
+                <br><br>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 7 5 13 20 15 10 </p>
+                <br><br>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>

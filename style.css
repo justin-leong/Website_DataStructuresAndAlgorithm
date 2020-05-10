@@ -449,6 +449,10 @@ LinkedLists
     /*background-color: white;*/
 }
 
+.codeWide{
+    width: 1000px;
+}
+
 .doubleline{
     border-bottom: 1px solid white;
     border-top: 1px solid white;
@@ -456,6 +460,10 @@ LinkedLists
 
 .codePurple{
     color: purple;
+}
+
+.codeComment{
+    color: green;
 }
 
 .indent1{
