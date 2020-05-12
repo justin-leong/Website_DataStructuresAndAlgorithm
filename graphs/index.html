@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures" href="#data structures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/index.html">LinkedLists</a>
+                    <a href="#stacks and queues">Stacks and Queues</a>
+                    <a href="#trees">Trees</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms" href="#algorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="#bubble sort">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="#graph: DFS">Graph: DFS</a>
+                    <a href="#graph: BFS">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects" href="#projects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Graphs Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Graphs</h1>
+            
+            <div class="paragraph">
+                A graph is a data structure that consists of nodes that store data and are connected to other nodes by links. The nodes in a graph are referred to as vertices while the links are called edges. Graphs are used in many real world applications, such as in a social media network where the nodes represent the profile of people and the edges between people represent whether the individuals are friends. Another example of a graph could be a map, the nodes can represent a specific location or building while the edges are the streets that show whether there is a street that connects two locations together.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_general.png">
+            </div>
+            
+            <div class="paragraph">
+                Graphs can be broken down into two distinctive types, directed and undirected. The difference between the two types of graphs depend on whether the edges allow only one-way traversals between nodes or allow bidirectional movement. 
+            </div>
+            
+            <h1 class="headerLeft">Undirected Graph</h1>
+            <div class="paragraph noTopPadding">
+                Links in an undirected graph create a path where back and forth traversals between the two nodes are allowed. If two nodes, A and B, are connected via a link in a undirect graph then that means that you can travel starting from node A to node B and well as starting from node B to node A. This concept can be visualized as a two-way street where you can travel in both directions on that street.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_undirected.png">
+            </div>
+            
+            <h1 class="headerLeft">Directed Graph</h1>
+            <div class="paragraph noTopPadding">
+                Links in a directed graph are directionally dependent, this means that just because node A and node B are connected via a link you cannot travel from each respective node to the other. Directed graphs can be visualized as one-way streets where you are only able to travel in the direction that the edge is pointing to.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_directed.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Code Implementation</h1>
+            
+            <div class="paragraph">
+                Java does not have a built-in collection for the graph data structure, however this data structure can easily be implemented with the help of other built-in data structures. In this implementation, we will be coding the structure of an undirected graph. The code for a directed graph is very similar and only differs on how the edges are added.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The first step in creating the graph data structure is to create a class to represent the graph. The Graph class will then have a subclass called Node that will allow us to create nodes/vertices to hold our data. The Graph class will also contain a HashMap data structure that will contain the key-value pairs of the nodes in the graph where the key will represent the data of a node and the value will be a reference to the actual node itself. We will be using the built-in HashMap collection to simplify our code and therefore will have to import the class.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">import</p> java.util.HashMap;
+                <br><br>
+                <p class="codePurple">class</p> Graph&lt;T&gt;{
+                <br>
+                <p class="indent1">HashMap&lt;T, Node&gt; nodeLookup =</p> <p class="codePurple">new</p> HashMap&lt;T, Node&gt;();
+                <br><br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The key components of a graph are the nodes and the edges that link the nodes together. Inside of the Node class, we want to create a variable to store the data of the object as well as to have a data structure to hold a list of adjacent nodes that the object is connected to which represent the edges. To store the information of the adjacent nodes, we will use a LinkedList data structure that will hold all the node addresses for quick access.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">import</p> java.util.HashMap;
+                <br>
+                <p class="codePurple">import</p> java.util.LinkedList;
+                <br><br>
+                <p class="codePurple">class</p> Graph&lt;T&gt;{
+                <br>
+                <p class="indent1">HashMap&lt;T, Node&gt; nodeLookup =</p> <p class="codePurple">new</p> HashMap&lt;T, Node&gt;();
+                <br><br>
+                <p class="indent1 codePurple">public class</p> Node{
+                <br>
+                <p class="indent2">T data;</p>
+                <br>
+                <p class="indent2">LinkedList&lt;Node&gt; adjacent =</p> <p class="codePurple">new</p> LinkedList&lt;Node&gt;();
+                <br><br>
+                <p class="indent2 codePurple">public</p> Node(T data){
+                <br>
+                <p class="indent3 codePurple">this</p>.data = data;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                This is the basic structure of our graph, however we still need to implement a couple methods to allow us to create nodes as well as to establish the links between nodes. The required methods needed to make this data structure functional are as follows: 
+            </div>
+            
+            <div class="paragraph noTopPadding removeIndent">
+                <p class="codePurple">add(T data):</p> Creates a new node object and adds it to the nodeLookup hashmap
+                <br><br>
+                <p class="codePurple">createEdge(T data1, T data2):</p> Creates an edge between the two nodes specified in the parameters 
+                <br><br>
+                <p class="codePurple">showGraph():</p> This method is not required, however it provides a good visual representation of the graph
+            </div>
+            
+            <h2 class="headerCenter doubleline">add() Method</h2>
+            
+            <div class="paragraph">
+                The first method we need to implement is a method that will allow us to add a node to our graph. This is a very simple method as it creates a node and adds this node to our HashMap if the node does not already exist in the map.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public void</p> add(T data){
+                <br>
+                <p class="indent1">nodeLookup.putIfAbsent(data,</p> <p class="codePurple">new</p> Node(data));
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">createEdge() Method</h2>
+            
+            <div class="paragraph">
+                The second method takes in the values of two nodes that we want to link together then creates the edge between the two nodes. This method is written for an undirected graph, however the implementation for a directed graph is very similar and only differs in which adjacent node list we update. This method grabs the node locations of the parameters by referencing our HashMap. It then checks to confirm that the nodes exist in our graph before trying to establish links. If both nodes exist, then each node is added to each others adjacent LinkedList object. 
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public void</p> createEdge(T data1, T data2){
+                <br>
+                <p class="indent1">Node n1 = nodeLookup.get(data1);</p>
+                <br>
+                <p class="indent1">Node n2 = nodeLookup.get(data2);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(n1 == <p class="codePurple">null</p> || n2 == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">n1.adjacent.add(n2);</p>
+                <br>
+                <p class="indent1">n2.adjacent.add(n1);</p>
+                <br>
+                }
+            </div>
+            
+            <br><br>
+            <h2 class="headerCenter doubleline">showGraph() Method</h2>
+            
+            <div class="paragraph">
+                This is a bonus method that outputs the nodes in the graph as well as the connections between all of the nodes. A for each loop is used to iterate through each of the nodes in the HashMap. Another for each loop is used to interate through the nodes in each LinkedList to output the connections.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public void</p> showGraph(){
+                <br>
+                <p class="indent1 codePurple">for</p>(T key : nodeLookup.keySet()){
+                <br>
+                <p class="indent2">System.out.println("Node: " + key);</p>
+                <br><br>
+                <p class="indent2">System.out.print("Connected To: ");</p>
+                <br>
+                <p class="indent2 codePurple">for</p>(Node node : nodeLookup.get(key).adjacent){
+                <br>
+                <p class="indent3">System.out.print(node.data + " ");</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2">System.out.println();</p>
+                <br>
+                <p class="indent2">System.out.println();</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+        </div>
+    
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Binary Search Tree - Example Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Example Walk-through</h1>
+            
+            <div class="paragraph">
+                With our graph class in place, we can walk through an example in our main function. The first step is to create an instance object of the Graph class.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">Graph graph =</p> <p class="codePurple">new</p> Graph();
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_example_1.png">
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Once we have created the graph object, we can add nodes to the graph by calling the add() method. Let’s add five nodes to the graph where each node contains a value from 1 to 5.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">Graph&lt;Integer&gt; graph =</p> <p class="codePurple">new</p> Graph&lt;Integer&gt;();
+                <br><br>
+                <p class="indent1">graph.add(1);</p>
+                <br>
+                <p class="indent1">graph.add(2);</p>
+                <br>
+                <p class="indent1">graph.add(3);</p>
+                <br>
+                <p class="indent1">graph.add(4);</p>
+                <br>
+                <p class="indent1">graph.add(5);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_example_2.png">
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                We can now create the edges between our nodes by calling the createEdge() method. Let’s create the following links between our nodes:
+                <br><br>
+                Edge between: 1 and 3
+                <br>
+                Edge between: 1 and 4
+                <br>
+                Edge between: 1 and 5
+                <br>
+                Edge between: 2 and 5
+                <br>
+                Edge between: 3 and 4
+                <br>
+                Edge between: 4 and 5
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">Graph&lt;Integer&gt; graph =</p> <p class="codePurple">new</p> Graph&lt;Integer&gt;();
+                <br><br>
+                <p class="indent1">graph.add(1);</p>
+                <br>
+                <p class="indent1">graph.add(2);</p>
+                <br>
+                <p class="indent1">graph.add(3);</p>
+                <br>
+                <p class="indent1">graph.add(4);</p>
+                <br>
+                <p class="indent1">graph.add(5);</p>
+                <br><br>
+                <p class="indent1">graph.createEdge(1, 3);</p>
+                <br>
+                <p class="indent1">graph.createEdge(1, 4);</p>
+                <br>
+                <p class="indent1">graph.createEdge(1, 5);</p>
+                <br>
+                <p class="indent1">graph.createEdge(2, 5);</p>
+                <br>
+                <p class="indent1">graph.createEdge(3, 4);</p>
+                <br>
+                <p class="indent1">graph.createEdge(4, 5);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_example_3.png">
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                We can now verify whether the graph we created is what we expected by calling the showGraph() method and seeing the console output.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> main(String[] args){
+                <br>
+                <p class="indent1">Graph&lt;Integer&gt; graph =</p> <p class="codePurple">new</p> Graph&lt;Integer&gt;();
+                <br><br>
+                <p class="indent1">graph.add(1);</p>
+                <br>
+                <p class="indent1">graph.add(2);</p>
+                <br>
+                <p class="indent1">graph.add(3);</p>
+                <br>
+                <p class="indent1">graph.add(4);</p>
+                <br>
+                <p class="indent1">graph.add(5);</p>
+                <br><br>
+                <p class="indent1">graph.createEdge(1, 3);</p>
+                <br>
+                <p class="indent1">graph.createEdge(1, 4);</p>
+                <br>
+                <p class="indent1">graph.createEdge(1, 5);</p>
+                <br>
+                <p class="indent1">graph.createEdge(2, 5);</p>
+                <br>
+                <p class="indent1">graph.createEdge(3, 4);</p>
+                <br>
+                <p class="indent1">graph.createEdge(4, 5);</p>
+                <br><br>
+                <p class="indent1">graph.showGraph();</p>
+                <br>
+                }
+            </div>
+            
+            <div class="code codeWide">
+                <p>Console Output:</p>
+                <br><br>
+                <p class="indent1">Node: 1</p>
+                <br>
+                <p class="indent1">Connected To: 3 4 5</p>
+                <br><br>
+                <p class="indent1">Node: 2</p>
+                <br>
+                <p class="indent1">Connected To: 5</p>
+                <br><br>
+                <p class="indent1">Node: 3</p>
+                <br>
+                <p class="indent1">Connected To: 1 4</p>
+                <br><br>
+                <p class="indent1">Node: 4</p>
+                <br>
+                <p class="indent1">Connected To: 1 3 5</p>
+                <br><br>
+                <p class="indent1">Node: 5</p>
+                <br>
+                <p class="indent1">Connected To: 1 2 4</p>
+                <br><br>
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The console output matches up with the visual representation that we expected
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Graphs/graph_example_3.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Graphs Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Traversing a graph</h1>
+            
+            <div class="paragraph">
+                Knowing how to implement the graph from scratch is one aspect of this data structure, however it is also useful to know how to traverse each of the nodes in the graph. Two common methods of performing graph traversals is using Depth First Search (DFS) or Breath First Search (BFS). These algorithms are another topic and further details on how to implement them can be found in the Algorithm section of this site. 
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>

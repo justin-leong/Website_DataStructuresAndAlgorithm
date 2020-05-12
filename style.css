@@ -432,10 +432,14 @@ LinkedLists
     padding-top: 0;
 }
 
+.removeIndent{
+    text-indent: 0px;
+}
+
 .code{
     width: 700px;
     min-height: 100px;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 30px;
     font-size: 25px;
     font-weight: bold;
@@ -451,6 +455,10 @@ LinkedLists
 
 .codeWide{
     width: 1000px;
+}
+
+.codeWideFinal{
+    width: auto;
 }
 
 .doubleline{
