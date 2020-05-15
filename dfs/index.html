@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures" href="#data structures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/index.html">LinkedLists</a>
+                    <a href="#stacks and queues">Stacks and Queues</a>
+                    <a href="#trees">Trees</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms" href="#algorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="#bubble sort">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="#graph: DFS">Graph: DFS</a>
+                    <a href="#graph: BFS">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects" href="#projects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Depth First Search Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Depth First Search (DFS)</h1>
+            
+            <div class="paragraph">
+                Depth First Search (DFS) is an algorithm used to traverse a graph by first exploring deep before exploring wide. This algorithm is a useful approach to ensure that every node in a graph has been visited and no path has been unaccounted for. The concept of exploring deep before wide may initially seem confusing, however walking through a simple example will clarify this process. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Let’s suppose we have a graph that contains 5 nodes with the letters A, B, C, D, and E and we want to determine whether a path exists between nodes A to E. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example1.png">
+            </div>
+            
+            <div class="paragraph">
+                 Visually we can see that there are multiple paths that could lead us from A to E. Three trivial paths that we can immediately see are [A->B->C->E], [A->C->E], and [A->D->E]. Another more complicated path could be, [A->B->C->A->D->A->B->C->E] which is valid however we are visiting the same nodes multiple times before reaching the desired destination. In order to avoid the repetition of already visited paths, we will have a data structure that keeps track of the nodes that we have already visited so that we avoid any possible cycles. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                 In the following example, nodes that are represented in red have not been visited while nodes in green are nodes that have been visited before. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                 The depth first search approach will first start at node A and compare whether A is equal to the destination node that we are searching for, in this case E.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example2.png">
+            </div>
+            
+            <div class="paragraph">
+                 Since A is not equal to E, we need to see what options/paths we have access to. These paths are the adjacent nodes that A is connected to which are B, C and D. If we recall the Graph data structure, we know that every node has a LinkedList which contains the nodes that the current node is connected to, we will call this list ‘adjacent’. For our example we can assume that node A’s adjacent list looks like this [B, C, D]. Since B is the first item in the list we will choose to take that path before checking path C and D. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example3.png">
+            </div>
+            
+            <div class="paragraph">
+                 We are now at node B so we compare if B is equal to our destination node E. This is not the case, so we now check what paths we can take from node B. Node B has an adjacent list that contains [A, C] in this order so we first go to node A before going to C. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example4.png">
+            </div>
+            
+            <div class="paragraph">
+                 Now we have already been to node A and checked if A is equal to E so this is redundant. This is where we need another data structure to contain all of the nodes we have visited already. So far we have travelled to node A and node B so this ‘visited’ list will contain those two nodes. If we have visited a node already then we want to just go back to the previous node and check the next item in the adjacent node list. In this case, we’ve been to A so we return back to B and the next item in node B’s adjacent list is C.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example5.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example6.png">
+            </div>
+            
+            <div class="paragraph">
+                 We now check if we have visited C (which we have not), add it to the visited list, then compare if C is the destination we are looking for. We repeat the procedure again with the adjacent nodes of C which looks like [B, A, E]. We first go to B but realize we have been here before so we go back to C.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example7.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example8.png">
+            </div>
+            
+            <div class="paragraph">
+                 Now we go to A, but similarly we have been here before so we go back to C.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example9.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example10.png">
+            </div>
+            
+            <div class="paragraph">
+                 We now go to E where we realize that this matches the destination we are looking for and can return true since we have confirmed that there is a path from A to E.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/DFS/dfs_example11.png">
+            </div>
+            
+            <div class="paragraph">
+                 Note that we did not end up checking the adjacent nodes from A to C or A to D because we went down the B path which lead us down the path to C then down the path to E. This is what is meant by exploring deep before wide. If we were to explore wide, we would check all of the adjacent nodes connected to A (B, C, D) prior to checking the connections of B, C, and D. Exploring wide before deep is an example of the breath first search (BFS) algorithm and is further explained in the BFS section under algorithms. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                 Also note that we did not end up visiting node D in our example, however if we were just to run the DFS algorithm without searching for a specific node then we would end up visiting all the nodes.
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Code Implementation</h1>
+            
+            <div class="paragraph">
+                The DFS algorithm can be implemented both iteratively and recursively. The following code implementation will be done recursively, however can be slightly modified to make it iterative.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                To begin the implementation of DFS, we will create a function called hasPathDFS() which accepts two parameters. The first parameter is the value of the start location and the second is the value of the destination that we are searching for. This function will return true if it can find a valid path from the start node to the destination node or else it will return false.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> hasPathDFS(String start, String destination){
+                <br><br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The first task to implement is to find the node references that relate to the input parameters. We can find the node references because we know that the Graph data structure contains a HashMap, which we will refer to as nodeLookup, containing all of the nodes in a graph. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> hasPathDFS(String start, String destination){
+                <br>
+                <p class="indent1">Node s = nodeLookup.get(start);</p>
+                <br>
+                <p class="indent1">Node d = nodeLookup.get(destination);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Before we begin traversing for the node we can perform a quick check to make sure that the nodes exist in the graph. If either of the nodes don't exist then there is no reason to go searching for whether there is a path because we immediately know that there can't be one. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> hasPathDFS(String start, String destination){
+                <br>
+                <p class="indent1">Node s = nodeLookup.get(start);</p>
+                <br>
+                <p class="indent1">Node d = nodeLookup.get(destination);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(s == <p class="codePurple">null</p> || d == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The next item to consider in the function is how to keep track of the nodes that we have already visited. This can easily be done using a Set data structure, where we continue to update the nodes in this set every time we visit a new node.
+            </div>
+            
+           <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> hasPathDFS(String start, String destination){
+                <br>
+                <p class="indent1">Node s = nodeLookup.get(start);</p>
+                <br>
+                <p class="indent1">Node d = nodeLookup.get(destination);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(s == <p class="codePurple">null</p> || d == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We have now prepared the basic items for our DFS algorithm, however we now need to make a call to another function which will be the recursive function that performs the actual DFS. We will call this recursive function dfs() which will search for the destination node and return true if it has found it. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> hasPathDFS(String start, String destination){
+                <br>
+                <p class="indent1">Node s = nodeLookup.get(start);</p>
+                <br>
+                <p class="indent1">Node d = nodeLookup.get(destination);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(s == <p class="codePurple">null</p> || d == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br><br>
+                <p class="indent1 codePurple">return</p> dfs(s, d, visited);
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We have completed the structure for the hasPathDFS() function and can now move on to implementing the dfs() recursive function that performs the actual search algorithm.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                This function will return a boolean based on whether it has found the destination node or not. It will accept three parameters that correspond to the current node, destination node, and visited HashSet data structure.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br><br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The first thing we need to check is to see if we have visited this current node that we are on before and if we have then we immediately return false. If we have not been to this node before then we want to add it to our visited list.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br>
+                <p class="indent1 codePurple">if</p>(visited.contains(c)){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">visited.add(c);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Next we want to check if the current node that we are on is the destination node we are looking for then we can return true.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br>
+                <p class="indent1 codePurple">if</p>(visited.contains(c)){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">visited.add(c);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(c.equals(d)){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Now if the current node doesn't match the destination node, we must check the adjacent nodes of the current node. This can be implemented using a for each loop since we have access to the current node's adjacent LinkedList. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br>
+                <p class="indent1 codePurple">if</p>(visited.contains(c)){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">visited.add(c);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(c.equals(d)){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">for</p>(Node adj: c.adjacent){
+                <br>
+                <p class="indent2 codePurple"></p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Inside of the for loop, we will make our recursive call to check if any adjacent nodes down the line are equal to the destination node. If one of the nodes down the line is equal to the destination node then we can return true up the stack.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br>
+                <p class="indent1 codePurple">if</p>(visited.contains(c)){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">visited.add(c);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(c.equals(d)){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">for</p>(Node adj: c.adjacent){
+                <br>
+                <p class="indent2 codePurple">if</p>(dfs(adj, d, visited)){
+                <br>
+                <p class="indent3 codePurple">return true</p>;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Finally, if we have exhausted all of the adjacent nodes and haven't found a path to the destination then we return false.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br>
+                <p class="indent1 codePurple">if</p>(visited.contains(c)){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">visited.add(c);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(c.equals(d)){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">for</p>(Node adj: c.adjacent){
+                <br>
+                <p class="indent2 codePurple">if</p>(dfs(adj, d, visited)){
+                <br>
+                <p class="indent3 codePurple">return true</p>;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return false</p>;
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The depth first search algorithm can be represented by the completed hasPathDFS() and dfs() functions which are shown below.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public boolean</p> hasPathDFS(String start, String destination){
+                <br>
+                <p class="indent1">Node s = nodeLookup.get(start);</p>
+                <br>
+                <p class="indent1">Node d = nodeLookup.get(destination);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(s == <p class="codePurple">null</p> || d == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br><br>
+                <p class="indent1 codePurple">return</p> dfs(s, d, visited);
+                <br>
+                }
+                <br><br>
+                <hr><br>
+                <p class="codePurple">public boolean</p> dfs(Node c, Node d, HashSet&lt;Node&gt; visited){
+                <br>
+                <p class="indent1 codePurple">if</p>(visited.contains(c)){
+                <br>
+                <p class="indent2 codePurple">return false</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">visited.add(c);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(c.equals(d)){
+                <br>
+                <p class="indent2 codePurple">return true</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">for</p>(Node adj: c.adjacent){
+                <br>
+                <p class="indent2 codePurple">if</p>(dfs(adj, d, visited)){
+                <br>
+                <p class="indent3 codePurple">return true</p>;
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return false</p>;
+                <br>
+                }
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>
