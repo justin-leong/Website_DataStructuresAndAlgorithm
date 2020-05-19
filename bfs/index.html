@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures" href="#data structures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/index.html">LinkedLists</a>
+                    <a href="#stacks and queues">Stacks and Queues</a>
+                    <a href="#trees">Trees</a>
+                    <a href="#graphs">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms" href="#algorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="#bubble sort">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="#graph: DFS">Graph: DFS</a>
+                    <a href="#graph: BFS">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects" href="#projects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Breadth First Search Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Breadth First Search (BFS)</h1>
+            
+            <div class="paragraph">
+                Breadth First Search (BFS) is a searching algorithm that explores the nodes closest to the starting point before expanding outwards and exploring the rest of the nodes in the graph. BFS is often described as the search wide before deep concept because we stay as close to the starting point before traversing deep into the graph. In order to stay close to the starting point, this algorithm requires a queue data structure to keep track of which node should be next in line to be searched. As the search expands outwards, the nodes connected to the current search node are added to the end of the queue.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The best way to understand BFS is through a visual example which we will be applying on the following tree. We will be using a tree since it allows us to better visualize BFS than in a graph that contains cycles.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_players.png">
+            </div>
+            
+            <div class="paragraph">
+                 This tree contains the names of the top NHL players where each level represents the skill set of the player. We want to traverse the tree using the BFS algorithm, starting at the root (top player), to list out all the players in the order of their skill level. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                 BFS would start at Connor McDavid then search for the next best players by seeing who Connor McDavid is linked to. From looking at the tree, McDavid is connected to Sidney Crosby, Nikita Kucherov, and Alex Ovechkin. We would add these three names in that order to our queue so we know who to check next. Since Crosby is next in our queue, we would traverse to him and add all the players connected to him to the end of the queue. Kucherov is next in the queue so we would traverse to him and add all his connections to the queue. We continue to repeat this process until we have added all of the players in the tree to the queue and have iterate through each of the players in the queue. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                 The output of this BFS traversal would look like this:
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_players_output.png">
+            </div>
+            
+            <div class="paragraph">
+                 The visual step by step BFS traversal of this tree would look like the following with the queue items at each stage. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example1.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example2.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example3.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example4.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example5.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example6.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example7.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example8.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example9.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example10.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/BFS/bfs_nhl_example11.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Code Implementation</h1>
+            
+            <div class="paragraph">
+                Similar to DFS, the BFS algorithm can be implemented both iteratively and recursively. The following code implementation will be done iteratively, however it can be slightly modified to become recursive. Note that this algorithm will built off of the Graph data structure and a good understanding of the Graph data structure is required before proceeding.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                To begin the implementation of BFS, we will create the function called traverseGraphBFS() with a single parameter called 'start'. The start parameter will be the value of the node that we want our traversal to begin at. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br><br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The next step is to get the node reference from our nodeLookup HashMap and determine if this node exists in our graph. If the start node doesn't exist in the graph we can immediately exit the function.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br>
+                <p class="indent1">Node startNode = nodeLookup.get(start);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(startNode == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Similar to DFS, we will need a data structure to keep track of the nodes we have already visited. We can use a HashSet called 'visited' to keep track of these nodes. Another data structure that we will need is a queue. We can use a LinkedList to represent this queue which if we recall holds the order of the nodes that we traverse next.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br>
+                <p class="indent1">Node startNode = nodeLookup.get(start);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(startNode == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br>
+                <p class="indent1">LinkedList&lt;Node&gt; queue = </p> <p class="codePurple">new</p> LinkedList&lt;Node&gt;();
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Now that we have created the queue, we need to add the first item to the queue to begin the BFS traversal. This will be the startNode that we had initialized earlier.
+            </div>
+            
+           <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br>
+                <p class="indent1">Node startNode = nodeLookup.get(start);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(startNode == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br>
+                <p class="indent1">LinkedList&lt;Node&gt; queue = </p> <p class="codePurple">new</p> LinkedList&lt;Node&gt;();
+                <br><br>
+                <p class="indent1">queue.add(startNode);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We can now begin writing the actual BFS logic. Since this is an iterative solution, we need to consider what the terminating case should be. We know that when we traverse a node, we add the child nodes to the queue only if we haven't been been to the current node. Thus our algorithm needs to run as long as there is an item in the queue. Therefore we can create a while loop where we continue to loop until we have exhausted all the items in our queue. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br>
+                <p class="indent1">Node startNode = nodeLookup.get(start);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(startNode == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br>
+                <p class="indent1">LinkedList&lt;Node&gt; queue = </p> <p class="codePurple">new</p> LinkedList&lt;Node&gt;();
+                <br><br>
+                <p class="indent1">queue.add(startNode);</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(!queue.isEmpty()){
+                <br>
+                <p class="indent2 codePurple"></p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Now we can pop the first item in the queue and check if we have visited this node before. If we have visited this node before, then we continue the loop and pop the next item from the list. If we have not been to this node before, then we will add this node to the visited set and print the value of the node to the console.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br>
+                <p class="indent1">Node startNode = nodeLookup.get(start);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(startNode == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br>
+                <p class="indent1">LinkedList&lt;Node&gt; queue = </p> <p class="codePurple">new</p> LinkedList&lt;Node&gt;();
+                <br><br>
+                <p class="indent1">queue.add(startNode);</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(!queue.isEmpty()){
+                <br>
+                <p class="indent2">Node currentNode = queue.pop();</p>
+                <br><br>
+                <p class="indent2 codePurple">if</p>(visited.contains(currentNode)){
+                <br>
+                <p class="indent3 codePurple">continue</p>;
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2">visited.add(currentNode);</p>
+                <br><br>
+                <p class="indent2">System.out.println(currentNode.data);</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The last step is to add the child/adjacent nodes of the current node to the end of the queue. This can be perform with a for each loop on the current node's adjacent LinkedList which contains all of the nodes that it is connected to.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public void</p> traverseGraphBFS(<p class="codePurple">int</p> start){
+                <br>
+                <p class="indent1">Node startNode = nodeLookup.get(start);</p>
+                <br><br>
+                <p class="indent1 codePurple">if</p>(startNode == <p class="codePurple">null</p>){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1">HashSet&lt;Node&gt; visited = </p> <p class="codePurple">new</p> HashSet&lt;Node&gt;();
+                <br>
+                <p class="indent1">LinkedList&lt;Node&gt; queue = </p> <p class="codePurple">new</p> LinkedList&lt;Node&gt;();
+                <br><br>
+                <p class="indent1">queue.add(startNode);</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(!queue.isEmpty()){
+                <br>
+                <p class="indent2">Node currentNode = queue.pop();</p>
+                <br><br>
+                <p class="indent2 codePurple">if</p>(visited.contains(currentNode)){
+                <br>
+                <p class="indent3 codePurple">continue</p>;
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2">visited.add(currentNode);</p>
+                <br><br>
+                <p class="indent2">System.out.println(currentNode.data);</p>
+                <br><br>
+                <p class="indent2 codePurple">for</p>(Node adj : currentNode.adjacent){
+                <br>
+                <p class="indent3">queue.add(adj);</p>
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                This is the complete function for a BFS algorithm which traverses all of the nodes in a graph starting from the node specified by the parameter input. The key concept to remember in BFS is that the traversal explore the nodes closes to the start position before expanding outwards. 
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>
