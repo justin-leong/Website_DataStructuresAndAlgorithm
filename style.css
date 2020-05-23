@@ -522,6 +522,63 @@ LinkedLists
     background-color: white;
 }
 
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+
+/*------------------------------------------------------
+Sorting Visualizer - Project
+-------------------------------------------------------*/
+
+.containerGUI{
+    width: 1100px;
+    min-height: 750px;
+    margin: 30px auto;
+    padding: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: courier new;
+    letter-spacing: 2px;
+    line-height: 40px;
+    color: black;
+    background-color: darkblue;
+    /*border-radius: 20px;*/
+    text-align: center;
+    position: relative;
+}
+
+.containerButtons{
+    width: auto;
+    height: auto;
+    /*background-color: white;*/
+    /*border: 1px solid black;*/
+    padding: 10px;
+}
+
+.containerBars{
+    width: 1040px;
+    height: auto;
+    /*background-color: black;*/
+    position: absolute;
+    bottom: 0;
+}
+
+.objectBar{
+    width: 2px;
+    height: 9px;
+    margin: 0 1px;
+    background-color: red;
+    display: inline-block;
+    position: relative;
+    bottom: 0;
+}
+
+.sortButton{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    border-radius: 50px;
+    color: white;
+    background-color: black;
+}
 
 
 
