@@ -562,7 +562,7 @@ Sorting Visualizer - Project
 }
 
 .objectBar{
-    width: 2px;
+    width: 2px; /*2px*/
     height: 9px;
     margin: 0 1px;
     background-color: red;
