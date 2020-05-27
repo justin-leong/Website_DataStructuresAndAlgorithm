@@ -1,7 +1,7 @@
 
 var objCtrl = (function(){
     
-    var arraySize = 250;
+    var arraySize = 200;
     var numsArray = [];
     var indexPosition = {
         left: 0,

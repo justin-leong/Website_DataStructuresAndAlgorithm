@@ -13,15 +13,21 @@ button{
     cursor: pointer;
 }
 
+a{
+    color: black;
+    cursor: pointer;
+}
+
 input{
     outline: none;
 }
 
 h1{
     text-align: center;
-    padding: 20px;
+    padding: 20px; /*25*/
     font-family:  sans-serif;
     color: white;
+    font-size: 28px;
     /*border: 1px solid black;*/
 }
 
@@ -54,8 +60,9 @@ img{
 }
 
 table{
-    width: 1000px;
+    width: 800px; /*1000*/
     margin: 0 auto;
+    margin-top: 20px;
     border: 1px solid white;
 }
 
@@ -63,29 +70,30 @@ td{
     text-align: center;
     width: 500px;
     font-family: sans-serif;
-    font-size: 30px;
+    font-size: 25px; /*30*/
     color: white;
     border: 1px solid white;
 }
 
 .tableHeader{
-    padding: 30px 0;
+    padding: 20px 0; /*30*/
 }
 
 .tableEntry{
     text-align: left;
-    font-size: 20px;
+    font-size: 16px; /*20*/
     font-family: sans-serif;
     letter-spacing: 2px;
-    line-height: 40px;
-    padding: 0 20px;
+    line-height: 30px; /*40*/
+    padding: 0 10px; /*20*/
 }
 
 /*------------------------------------------------------
 Main Body Content
 -------------------------------------------------------*/
+/*Colors: https://visme.co/blog/website-color-schemes/*/
 .profile{
-    width: 1250px;
+    width: 1000px; /*1250*/
     height: 360px;
     /*background-color: red;*/
     display: inline-block;
@@ -95,11 +103,11 @@ Main Body Content
 }
 
 .profilePicContainer{
-    width: 250px;
+    width: 200px; /*250*/
     height: auto;
     padding: 10px;
-    margin: 20px 0;
-    margin-left: 40px;
+    margin: 50px 0;
+    margin-left: 0px; /*40*/
     border: 5px solid black; /*#7BEBEB;*/
     border-radius: 500px;
     background-color: white; /*#D9FFDF;*/
@@ -113,14 +121,14 @@ Main Body Content
 }
 
 .profileParagraph{
-    width: 850px;
+    width: 720px; /*850*/
     height: 300px;
-    margin-left: 50px;
-    padding: 30px;
-    font-size: 20px;
+    margin-left: 20px; /*50*/
+    padding: 40px;
+    font-size: 16px; /*20*/
     font-family: sans-serif;
     letter-spacing: 2px;
-    line-height: 40px;
+    line-height: 36px; /*40*/
     color: white;
     /*border: 1px solid black;*/
     /*background-color: white;*/
@@ -128,9 +136,18 @@ Main Body Content
 }
 
 .dataStructuresContainer{
-    width: 1250px;
+    width: 1000px; /*1250*/
     height: auto;
     padding: 30px;
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+}
+
+.algorithmsContainer{
+    width: 1000px; /*1250*/
+    height: auto;
+    padding: 30px;
+    margin: 0 auto;
     border-bottom: 1px solid white;
 }
 
@@ -138,8 +155,8 @@ Main Body Content
     /*position: relative;*/
     display: inline-block;
     text-align: center;
-    width: 350px;
-    min-height: 300px;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
     margin: 20px;
     border-radius: 30px;
     background-color: #D9FFFF;
@@ -149,8 +166,8 @@ Main Body Content
 .linkedListsContainer{
     position: relative;
     display: inline-block;
-    width: 350px;
-    min-height: 300px;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
     margin: 20px;
     border-radius: 30px;
     background-color: #D9FFDF;
@@ -160,8 +177,8 @@ Main Body Content
 .stacksAndQueuesContainer{
     position: relative;
     display: inline-block;
-    width: 350px;
-    min-height: 300px;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
     margin: 20px;
     border-radius: 30px;
     background-color: #FFFFCF;
@@ -171,8 +188,8 @@ Main Body Content
 .treesContainer{
     position: relative;
     display: inline-block;
-    width: 350px;
-    min-height: 300px;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
     margin: 20px;
     border-radius: 30px;
     background-color: #FFDDDD;
@@ -182,8 +199,8 @@ Main Body Content
 .graphsContainer{
     position: relative;
     display: inline-block;
-    width: 350px;
-    min-height: 300px;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
     margin: 20px;
     border-radius: 30px;
     background-color: #F5E1FD;
@@ -193,11 +210,77 @@ Main Body Content
 .hashMapsContainer{
     position: relative;
     display: inline-block;
-    width: 350px;
-    min-height: 300px;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
     margin: 20px;
     border-radius: 30px;
     background-color: #FFDFD3;
+    box-shadow: 1px 2px 10px 1px #888888;
+}
+
+.bubbleSortHomeContainer{
+    position: relative;
+    display: inline-block;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #FBE8A6;
+    box-shadow: 1px 2px 10px 1px #888888;
+}
+
+.mergeSortHomeContainer{
+    position: relative;
+    display: inline-block;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #F4976C;
+    box-shadow: 1px 2px 10px 1px #888888;
+}
+
+.quickSortContainer{
+    position: relative;
+    display: inline-block;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #B4DFE5;
+    box-shadow: 1px 2px 10px 1px #888888;
+}
+
+.dfsContainer{
+    position: relative;
+    display: inline-block;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #C5CBE3;
+    box-shadow: 1px 2px 10px 1px #888888;
+}
+
+.bfsContainer{
+    position: relative;
+    display: inline-block;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #D2FDFF;
+    box-shadow: 1px 2px 10px 1px #888888;
+}
+
+.binarySearchContainer{
+    position: relative;
+    display: inline-block;
+    width: 270px; /*350 280*/
+    min-height: 240px; /*300 260*/
+    margin: 20px;
+    border-radius: 30px;
+    background-color: #FFFFFF;
     box-shadow: 1px 2px 10px 1px #888888;
 }
 
@@ -213,7 +296,7 @@ Main Body Content
     border-radius: 30px;
     padding: 10px 0;
     margin: 10px;
-    font-size: 25px;
+    font-size: 20px; /*25*/
     font-weight: 600;
     font-family: sans-serif;
 }
@@ -252,12 +335,12 @@ header{
 }
 
 .name{
-    width: 210px;
+    width: 170px; /*210*/
     height: auto;
     padding: 10px;
     display: inline-block;
     font-family: sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     float: left;
     color: black;
@@ -269,7 +352,7 @@ header{
 
 .navbar{
     width: auto;
-    min-width: 1000px;
+    min-width: 10px; 
     height: auto;
     font-family: sans-serif;
     background-color: white;
@@ -279,7 +362,7 @@ header{
 
 .navbar a{
     float: left;
-    font-size: 16px;
+    font-size: 14px; /*16*/
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -292,8 +375,8 @@ header{
 }
 
 .dropdown .mainHeader{
-    width: 250px;
-    font-size: 16px;
+    width: 225px; /*250*/
+    font-size: 14px;
     outline: none;
     color: black;
     padding: 14px 16px;
@@ -307,7 +390,7 @@ header{
 }
 
 .dropdownContent{
-    width: 250px;
+    width: 225px; /*250*/
     display: none;
     position: absolute;
     margin-top: 50px;
@@ -388,7 +471,7 @@ body {
     justify-content: center;
     border-top: 1px #777 solid; 
     /*padding-top: 1.25rem;*/
-    padding: 10px 0;
+    /*padding: 10px 0;*/
 }
 
 .ft-social-list li {
@@ -405,7 +488,7 @@ body {
 LinkedLists
 -------------------------------------------------------*/
 .sectionDivider{
-    width: 1250px;
+    width: 1000px; /*1250*/
     min-height: auto;
     display: inline-block;
     padding: 30px;
@@ -415,14 +498,14 @@ LinkedLists
 }
 
 .paragraph{
-    width: 1100px;
+    width: 880px; /*1100*/
     margin: 0 auto;
-    padding: 30px;
-    font-size: 20px;
+    padding: 20px; /*30*/
+    font-size: 16px; /*20*/
     font-family: sans-serif;
     letter-spacing: 2px;
-    line-height: 40px;
-    text-indent: 100px;
+    line-height: 36px; /*40*/
+    text-indent: 80px; /*100*/
     color: white;
     /*border: 1px solid black;*/
     /*background-color: white;*/
@@ -441,11 +524,11 @@ LinkedLists
     min-height: 100px;
     margin: 30px auto;
     padding: 30px;
-    font-size: 25px;
+    font-size: 20px; /*25*/
     font-weight: bold;
     font-family: courier new;
     letter-spacing: 2px;
-    line-height: 40px;
+    line-height: 30px; /*40*/
     color: black;
     background-color: white;
     border-radius: 20px;
@@ -454,7 +537,7 @@ LinkedLists
 }
 
 .codeWide{
-    width: 1000px;
+    width: 850px; /*1000*/
 }
 
 .codeWideFinal{
@@ -529,7 +612,7 @@ Sorting Visualizer - Project
 -------------------------------------------------------*/
 
 .containerGUI{
-    width: 1100px;
+    width: 1000px;
     min-height: 750px;
     margin: 30px auto;
     padding: 30px;
@@ -554,7 +637,7 @@ Sorting Visualizer - Project
 }
 
 .containerBars{
-    width: 1040px;
+    width: 940px; /*1040*/
     height: auto;
     /*background-color: black;*/
     position: absolute;
