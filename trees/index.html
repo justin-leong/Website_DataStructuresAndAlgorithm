@@ -166,7 +166,7 @@
                 To finish off the basic structure of the binary search tree, we will add a method which will allow us to add data to the tree. This method is pretty straight forward as it will check to see if the new value we want to add is less than or greater than our root node's value. If the value is less than the root node it will check to see if the left node is occupied and if it is then a recursive call to the function will be made passing in the left node. If the left node is not occupied then the value will be placed in that node location. The same logic is applied to the right side of the tree if the new value is greater than the root node's value.  
             </div>
             
-            <div class="code codeWide">
+            <div class="code codeWideFinal">
                 <p class="codePurple">class</p> TreeNode{
                 <br>
                 <p class="indent1">TreeNode left;</p>
@@ -360,7 +360,7 @@
             <div class="paragraph">
                 The pre-order traversal will print the parent node, left node, then right node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
             </div>
-            <div class="code codeWide">
+            <div class="code codeWideFinal">
                 <p class="indent codePurple">public static void</p> preOrderTraversal(TreeNode parent){
                 <br>
                 <p class="indent1">System.out.print(parent.data + " ");</p>
@@ -393,7 +393,7 @@
             <div class="paragraph">
                 The post-order traversal will print the left node, right node, then parent node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
             </div>
-            <div class="code codeWide">
+            <div class="code codeWideFinal">
                 <p class="indent codePurple">public static void</p> postOrderTraversal(TreeNode parent){
                 <br>
                 <p class="indent1 codePurple">if</p>(parent.left != <p class="codePurple">null</p>){

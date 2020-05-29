@@ -18,7 +18,7 @@ var objCtrl = (function(){
     
     var randomizeArray = function(numsArray){
         min = Math.ceil(10);
-        max = Math.floor(600);
+        max = Math.floor(500);
         
         for(var i=0; i<arraySize; i++){
             numsArray[i] = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -31,7 +31,7 @@ var objCtrl = (function(){
     
     var randomizeMergeSortArray = function(numsArray){
         min = Math.ceil(10);
-        max = Math.floor(600);
+        max = Math.floor(500);
         
         for(var i=0; i<arraySize; i++){
             numsArray[i] = Math.floor(Math.random() * (max - min + 1)) + min;
