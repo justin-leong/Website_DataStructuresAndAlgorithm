@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/">LinkedLists</a>
+                    <a href="/stacksAndQueues/">Stacks and Queues</a>
+                    <a href="/trees/">Trees</a>
+                    <a href="/graphs/">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="/bubbleSort/">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="/dfs/">Graph: DFS</a>
+                    <a href="/bfs/">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="/projects/sortingVisualizer/">Sorting Visualizer</a>
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Arrays Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Arrays</h1>
+            
+            <div class="paragraph">
+                Arrays are one of the most fundamental concepts in programming and are usually the first data structure introduced to beginner programmers. An array is simply a continuous list of storage containers that can hold a wide variety of data. The advantage of using an array is that the data contained inside can be accessed relatively quickly and are stored in an organized sequence.
+            </div>
+            
+            <div class="paragraph">
+                It may be difficult to completely grasp the abstract concept of arrays at first since it is represented as a virtual container in your computer. However, as a visual learner I found it helpful to compare arrays to a physical box that contains books. Suppose you had 10 books that you wanted to organize neatly so that you can quickly find the book if you ever needed to. Immediately, you would think to find a box that could perfectly fit all 10 of the books. This is similar to creating an array to hold a certain amount of data. The array itself would represent the book container, while the data inside of the array would be represented by the actual books.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Arrays/array_bookbox.png">
+            </div>
+            
+            <div class="paragraph">
+                We can take this analogy one step further by describing how the size of an array is defined. If we think about our book container, we want the container to have 10 slots to hold 10 books. Similarly, we define the size of the array by specifying how many items we want the array to contain. Now if we purchased an 11th book we would not be able to fit it in our container as it would break the box. An array works the exact same way where if we have more data than storage slots we would not be able to added it to our array. To fit the 11th book into our container, we must find a larger container that can fit 11 or more books then move all the books from the old container to our larger one. And as you have guessed, this is the same as an array as a new array must be initialized then each of the items in the old array must be copied to the new array prior to adding the new item. 
+            </div>
+            
+            <div class="paragraph">
+                One important question to ask is why wouldn't we just define an array that can hold a very large number of items so we don't have to worry about running out of storage containers? The simple answer is that the larger the array size the more memory it takes up in the computer which could be allocated for other purposes. This same question could be asked about our book container, why not find a container that can fit 100 books? or 1000 books? The answer is that if we used a container that could hold up to 1000 books to store only 10 of our books then the rest of the container would just be taking up space in our room which could be used to place other items such as a bed or a desk. We want to be as efficient with our physical space as possible and this goes for the space/memory we use in the programs we write.
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Creating Arrays Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Creating Arrays in Java</h1>
+            
+            <div class="paragraph">
+                With a basic understanding of arrays, we can now move to the actual implementation of creating an array using Java. There are two different techniques used to initialize an array in Java. The difference between the techniques being whether we know the data ahead of time or not.  
+            </div>
+            
+            <div class="paragraph">
+                Suppose we want to create an array of integers that will contain the height of 10 students. We don't know the heights of the students ahead of time, however we do know how many students we have. Therefore in our first technique we will create an array with a size of 10.
+            </div>
+            
+            <div class="code">
+                <p class="codePurple">int</p>[] heights = <p class="codePurple">new int</p>[10];
+            </div>
+            
+            <div class="paragraph">
+                In the above declaration, we create an integer array called 'heights' with a size of 10. We know that this is an integer array because of the square brackets following the variable type on the left hand side of the equal operator. On the right hand side of the equal operator we create a new object and specify the size of the array in the square brackets.
+            </div>
+            
+            <div class="paragraph">
+                If we were to print out all of the integers in the heights array that we created, we would get the following output.
+            </div>
+            
+            <div class="code">
+                <p class="indent3">[0,0,0,0,0,0,0,0,0,0]</p>
+            </div>
+            
+            <div class="paragraph">
+                The reason why the array is filled with 0's is because that is the default value for integer arrays in Java. Java has different default values for arrays of different primitive types and objects. I have listed a few of the common default values below.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                <br>
+                <p class="">int[] : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="indent1">[0, 0, 0, 0, 0, 0, 0, 0.....]</p>
+                <br><br>
+                <p class="">double[] : &nbsp;</p><p class="indent1">[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0.....]</p> 
+                <br><br>
+                <p class="">boolean[] : </p><p class="indent1">[false, false, false, false, false, false, false, false.....]</p>
+                <br><br>
+                <p class="">Object[] : &nbsp;</p><p class="indent1">[null, null, null, null, null, null, null, null.....]</p>
+            </div>
+            
+            <div class="paragraph">
+                The second technique to creating an array is when we know exactly what data should be inside of our array. Suppose we know all 10 heights of our students, we can directly add these heights(represented in cm) to our array when we first initialize it.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">int</p>[] heights = {181, 165, 193, 172, 179, 150, 162, 204, 199, 177};
+            </div>
+            
+            <div class="paragraph">
+                Instead of creating the array then updating the value of each position with the proper value, we have shown that we can complete this task in one line of code. Being able to create an array is important, however the real power of arrays comes from being able to update and manipulate the values inside. This brings us to the next topic of accessing data in an array.
+            </div>
+        </div>
+    
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Accessing Array Data Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Accessing Array Data</h1>
+            
+            <div class="paragraph">
+                Being able to quickly retrieve data from an array is one of the huge advantages of this data structure. Accessing data from an array is fairly straight forward, all we have to do is type the name of the array followed by square brackets and entering the values location inside of the square brackets. This brings us to the next important topic of arrays which is indexing. 
+            </div>
+            
+            <div class="paragraph">
+                An index can be thought of as the storage containers address in an array. Each container has a unique integer value that denotes the position of the value in the array. We already know that arrays are a continuous list of containers that are placed side by side. The index of an array starts off at index 0 on the left most container and increases by one for each container on the right. This idea of having the first item start at an index of 0 can be referred to as zero-based indexing. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/DataStructures/Arrays/array_index.png">
+            </div>
+            
+            <div class="paragraph">
+                If we want to access the first value in the above array we would reference that container by its index value of zero. The following code would print the value '181' to the console.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="">System.out.println(heights[0]);</p> <p class="codeComment">//This will print the value 181</p>
+            </div>
+            
+            <div class="paragraph">
+                The most important thing to remember about arrays is that the indexes are zero-based, therefore if we want to access the last item in the array it will always be the number of items in the array subtracted by 1. It is very common to write code that will cause an IndexOutOfBounds runtime error which in many times can be traced to trying to access the index equal to the number of items in the array which is undefined.
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Extra Information About Arrays Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Additional Array Concepts</h1>
+            
+            <div class="paragraph">
+                So far we have only skimmed the surface of arrays, but have built a strong understanding of the fundamentals of this data structure. There are many advanced topics of arrays that you should be familar with in order to become a master of this data structure. Below is a list of more advanced topics that you can seek out on your own if you are interested in learning more about arrays. Hopefully I will be able to create content on these topics in the future.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                <br>
+                <p class="">&#9679;&nbsp;&nbsp; Inserting values at the end, middle, and beginning of an array</p>
+                <br><br>
+                <p class="">&#9679;&nbsp;&nbsp; Deleting values at the end, middle, and beginning of an array</p>
+                <br><br>
+                <p class="">&#9679;&nbsp;&nbsp; Sorting an array (Check out my topics on sorting algorithms)</p>
+                <br><br>
+                <p class="">&#9679;&nbsp;&nbsp; Searching for a value in an array</p>
+                <br><br>
+                <p class="">&#9679;&nbsp;&nbsp; 2 Dimensional arrays</p>
+                <br><br>
+                <p class="">&#9679;&nbsp;&nbsp; ArrayLists and dynamically resizing arrays</p>
+                <br><br>
+                <p class="">&#9679;&nbsp;&nbsp; Two pointer technique with arrays</p>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>

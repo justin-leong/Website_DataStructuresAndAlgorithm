@@ -522,7 +522,7 @@ LinkedLists
 
 .code{
     width: 560px; /*700*/
-    min-height: 100px;
+    min-height: 0px; /*100*/
     margin: 30px auto;
     padding: 20px; /*30*/
     font-size: 16px; /*25 20*/
