@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/">LinkedLists</a>
+                    <a href="/stacksAndQueues/">Stacks and Queues</a>
+                    <a href="/trees/">Trees</a>
+                    <a href="/graphs/">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="/bubbleSort/">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="/dfs/">Graph: DFS</a>
+                    <a href="/bfs/">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="/projects/sortingVisualizer/">Sorting Visualizer</a>
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Merge Sort Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Merge Sort</h1>
+            
+            <div class="paragraph">
+                Merge sort is a very commonly used algorithm due to its efficient O(N*log(N)) run time. This algorithm works off the concept of merging two sorted halves of an array together by comparing each element in the two halves and sorting them from smallest to largest. In order to get the two sorted halves, merge sort is run recursively on each individual half until a subsection of the array can no longer be split in half again. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                From experience I know that trying to understand the concept of merge sort is very difficult at first but I found it much easier to understand by walking through an example and visually seeing what is happen at each individual step. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                To begin our example, let's suppose we have two sorted halves of an array that we want to merge together. In order to merge these halves together and sort them in ascending order we need to compare the smallest value in the left sorted half with the smallest value in the right sorted half. We can achieve this by placing a left pointer at the smallest index location of the left sorted half and a right pointer at the smallest index location of the right sorted half.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example1.png">
+            </div>
+            
+            <div class="paragraph">
+                We can now ask whether the value at the left pointer or right pointer is smaller. Visually we can see that the left pointer has a value of 0 while the right pointer has a value of 2. 0 is smaller than 2 so we know that 0 must be placed at the first index of our array. To make merge sort simplier we will create a temporary array to hold the sorted values then overwrite the original array after we have sorted all the elements. After we copy a value to the temp array we move the pointer at that value to the next item in the respective half. Since we copied over the value 0, we move the left pointer to the next index which has a value of 1.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example2.png">
+            </div>
+            
+            <div class="paragraph">
+                We now repeat the comparison of the left and right pointer and continue to take the smaller value. The left pointer has a value of 1 while the right pointer has a value of 2 so we copy the value 1 to the next available spot in the temp array and increment the left pointer.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example3.png">
+            </div>
+            
+            <div class="paragraph">
+                The left pointer now has a value of 3 and the right pointer has a value of 2. 2 is less than 3 so we copy 2 over to the temp array and increment the right pointer.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example4.png">
+            </div>
+            
+            <div class="paragraph">
+                We will continue to repeat this step until we have compared all the values in both halves and have a completely sorted temp array. Note that once the left or right pointer reaches the end of their respective half we just copy over the remaining values from the pointer that hasn't reached the end yet. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example5.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example6.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example7.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example8.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example9.png">
+            </div>
+            
+            <div class="paragraph">
+                The left pointer has now reached the end of it's respective half so now we just have to copy the remaining values from the right half array.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example10.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example11.png">
+            </div>
+            
+            <div class="paragraph">
+                Once we have completely filled the temp array with the values from the original array in sorted order, all we have to do now is remember to overwrite the values from the temp array over to our original array.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_example12.png">
+            </div>
+            
+            <div class="paragraph">
+                The big question now is how we get our array into two sorted halves? This is where recursion comes into play as we have to divide each respective half into another half until we reach a base condition. The base condition may not be obvious at first but if we think about splitting an array in halves multiple times we will eventually reach a point where we have a single element that we can no longer split into separate halves. Thinking about this in more detail, if we have a single element representing a single half then the half is already sorted since there is only one element. Let's walk through this recursive process to better understand how this is working.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_recursion1.png">
+            </div>
+            
+            <div class="paragraph">
+                Given this unsorted array of numbers let's divide it into two separate halves.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_recursion2.png">
+            </div>
+            
+            <div class="paragraph">
+                We will now look at the left half and divide that section of the array into another half.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_recursion3.png">
+            </div>
+            
+            <div class="paragraph">
+                We will continue to look at the new left half and split that into half again.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_recursion4.png">
+            </div>
+            
+            <div class="paragraph">
+                We continue to divide the left halves into halves until we reach our base condition which is when we are no longer able to split the section into a half.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_recursion5.png">
+            </div>
+            
+            <div class="paragraph">
+                Here we can see that we reached a point where we can no longer split the sections into halves. This is our base condition since we can see that the left section contains a single element 6 which is sorted since it is the only element in its section and the right section contains the single element 7 which is also sorted since it is the only element. We now combine the two sorted halves to get a sorted subsection and work our way up the recursive stack until the entire array is sorted. The follow image shows the recursive stack that would occur on the entire array.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Merge Sort/mergesort_recursion6.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Code Implementation</h1>
+            
+            <div class="paragraph">
+                Once we have a good understanding of how merge sort works, the implementation of the code is quite simple. The first step is to create a function that accepts an integer array to be sorted as the parameter. This function doesn't need to return a value since arrays are pass by reference in Java which means that the array will retain any modifications that we make on it. 
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> mergeSort(int[] nums){
+                <br><br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Inside of this function we want to create a temporary array with the same size as our original array which will help us during the comparison process of two sorted halves.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> mergeSort(int[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We now want to make a call to our recursive function where the meat and potatoes of merge sort is implemented. This recursive function will take in the array to be sorted, the temp array, the left most index of the array, and the right most index of the array as parameters. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Inside of our recursive merge sort function we can start off by defining the base case condition that would terminate the recursive call. We have already discussed this during our example walk through and have concluded that we want to exit the recursive call when we have a single element that can no longer be divided into two. In other terms, this will happen when our leftStart is equal to the rightEnd pointer. So we can say that we want to return out of the function if the leftStart pointer is greater than or equal to the rightEnd pointer.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                If we haven't reached our base case yet then we need to divide our current section into two halves. To do this we need to find the mid element in the subsection which can be done by finding the middle value between leftStart and rightEnd.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Now we want to recursively call merge sort on each respective halves. For the left side, this will be between leftStart and mid. While the right side will be between mid + 1 and rightEnd.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Lastly, we need to merge the two sorted halves together which means we need to create a new function called mergeHalves where we compare each value in the sorted halves and copy them to the temp array prior to overwritting our original array.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br><br>
+                <p class="indent1">mergeHalves(nums, temp, leftStart, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeHalves(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The first thing we need to do inside of the mergeHalves function is to set up our start and end pointers. The left pointer refers to the start of the left sorted half while the right pointer refers to the start of the right sorted half. The end of the left half will be the mid value while the end of the right half will be at rightEnd.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br><br>
+                <p class="indent1">mergeHalves(nums, temp, leftStart, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeHalves(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">int</p> left = leftStart;
+                <br>
+                <p class="indent1 codePurple">int</p> leftEnd = leftStart + (rightEnd - leftStart)/2;
+                <br>
+                <p class="indent1 codePurple">int</p> right = leftEnd + 1;
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We will also need an additional variable called 'index' to tell us what the next avaiable spot in the temp array will be. Note that index is initialized to leftStart and not 0 because we could potentially be merging a subsection of the array.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br><br>
+                <p class="indent1">mergeHalves(nums, temp, leftStart, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeHalves(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">int</p> left = leftStart;
+                <br>
+                <p class="indent1 codePurple">int</p> leftEnd = leftStart + (rightEnd - leftStart)/2;
+                <br>
+                <p class="indent1 codePurple">int</p> right = leftEnd + 1;
+                <br><br>
+                <p class="indent1 codePurple">int</p> index = leftStart;
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We can now walk through each of the halves to retrieve the smallest value and populate the temp array. Note that we will terminate when either the left pointer or right pointer reaches the end of their half. If we copy over the value at the left pointer, we will increment the left pointer. If we copy over the value at the right pointer, we will increment the right pointer. We then increment the index pointer after we copy over a value to move on to the next available spot in the temp array.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br><br>
+                <p class="indent1">mergeHalves(nums, temp, leftStart, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeHalves(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">int</p> left = leftStart;
+                <br>
+                <p class="indent1 codePurple">int</p> leftEnd = leftStart + (rightEnd - leftStart)/2;
+                <br>
+                <p class="indent1 codePurple">int</p> right = leftEnd + 1;
+                <br><br>
+                <p class="indent1 codePurple">int</p> index = leftStart;
+                <br><br>
+                <p class="indent1 codePurple">while</p>(left &lt;= leftEnd && right &lt;= rightEnd){
+                <br>
+                <p class="indent2 codePurple">if</p>(nums[left] &lt;= nums[right]){
+                <br>
+                <p class="indent3">temp[index] = nums[left];</p>
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p><p class="codePurple">else if</p>(nums[left] &gt; nums[right]){
+                <br>
+                <p class="indent3">temp[index] = nums[right];</p>
+                <br>
+                <p class="indent3">right++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Once we exit this initial while loop condition we still have to copy over the remaining elements from the halve where the pointer did not reach the end.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br><br>
+                <p class="indent1">mergeHalves(nums, temp, leftStart, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeHalves(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">int</p> left = leftStart;
+                <br>
+                <p class="indent1 codePurple">int</p> leftEnd = leftStart + (rightEnd - leftStart)/2;
+                <br>
+                <p class="indent1 codePurple">int</p> right = leftEnd + 1;
+                <br><br>
+                <p class="indent1 codePurple">int</p> index = leftStart;
+                <br><br>
+                <p class="indent1 codePurple">while</p>(left &lt;= leftEnd && right &lt;= rightEnd){
+                <br>
+                <p class="indent2 codePurple">if</p>(nums[left] &lt;= nums[right]){
+                <br>
+                <p class="indent3">temp[index] = nums[left];</p>
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p><p class="codePurple">else if</p>(nums[left] &gt; nums[right]){
+                <br>
+                <p class="indent3">temp[index] = nums[right];</p>
+                <br>
+                <p class="indent3">right++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(left &lt;= leftEnd){
+                <br>
+                <p class="indent2">temp[index] = nums[left];</p>
+                <br>
+                <p class="indent2">left++;</p>
+                <br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(right &lt;= rightEnd){
+                <br>
+                <p class="indent2">temp[index] = nums[right];</p>
+                <br>
+                <p class="indent2">right++;</p>
+                <br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Lastly, we just iterate through the temp array from leftStart to rightEnd and overwrite the original array's values with the temp array values.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> mergeSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1 codePurple">int</p>[] temp = <p class="codePurple">new</p> int[nums.length];
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> mid = leftStart + (rightEnd - leftStart)/2;
+                <br><br>
+                <p class="indent1">mergeSortRecursive(nums, temp, leftStart, mid);</p>
+                <br>
+                <p class="indent1">mergeSortRecursive(nums, temp, mid + 1, rightEnd);</p>
+                <br><br>
+                <p class="indent1">mergeHalves(nums, temp, leftStart, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> mergeHalves(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p>[] temp, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">int</p> left = leftStart;
+                <br>
+                <p class="indent1 codePurple">int</p> leftEnd = leftStart + (rightEnd - leftStart)/2;
+                <br>
+                <p class="indent1 codePurple">int</p> right = leftEnd + 1;
+                <br><br>
+                <p class="indent1 codePurple">int</p> index = leftStart;
+                <br><br>
+                <p class="indent1 codePurple">while</p>(left &lt;= leftEnd && right &lt;= rightEnd){
+                <br>
+                <p class="indent2 codePurple">if</p>(nums[left] &lt;= nums[right]){
+                <br>
+                <p class="indent3">temp[index] = nums[left];</p>
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p><p class="codePurple">else if</p>(nums[left] &gt; nums[right]){
+                <br>
+                <p class="indent3">temp[index] = nums[right];</p>
+                <br>
+                <p class="indent3">right++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(left &lt;= leftEnd){
+                <br>
+                <p class="indent2">temp[index] = nums[left];</p>
+                <br>
+                <p class="indent2">left++;</p>
+                <br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(right &lt;= rightEnd){
+                <br>
+                <p class="indent2">temp[index] = nums[right];</p>
+                <br>
+                <p class="indent2">right++;</p>
+                <br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">while</p>(left &lt;= leftEnd){
+                <br>
+                <p class="indent2">temp[index] = nums[left];</p>
+                <br>
+                <p class="indent2">left++;</p>
+                <br>
+                <p class="indent2">index++;</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">for</p>(<p class="codePurple">int</p> i=leftStart; i&lt;=rightEnd; i++){
+                <br>
+                <p class="indent2">nums[i] = temp[i];</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We have now completed the merge sort algorithm. Give this algorithm a try on an unsorted integer array and verify that the array becomes sorted!
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Time Complexity Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Time and Space Complexity</h1>
+            
+            <div class="paragraph">
+                As mentioned earlier, merge sort is a very efficient sorting algorithm as it completes the sorting in O(N*log(N)) time. No matter how unsorted the initial array is, it will always complete the operation in this run time. The disadvantage of merge sort is due to its space complexity since we require an additional temp array to assist us during the merge sequence. The temp array has a size equal to the original array therefore we know that the space complexity of this algorithm will be O(N) where N is the number of elements in the original array. If space is not an issue, this algorithm is very easy to implememt and is an algorithm that should always be considered when trying to sort and merge lists. 
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>
