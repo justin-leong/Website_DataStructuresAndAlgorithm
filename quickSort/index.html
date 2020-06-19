@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+    
+    
+<body>
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Header
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <header>
+        <div class="name">
+            JUSTIN LEONG
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Navigation Bar
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="navbar">
+            <!--Home-->
+            <div class="dropdown" id="dropdownHome">
+                <a class="mainHeader" id="headerHome" href="../home.html">Home</a>
+            </div>
+            
+            <!--Data Structures-->
+            <div class="dropdown" id="dropdownDataStructures">
+                <a class="mainHeader" id="headerDataStructures">Data Structures</a>
+                
+                <div class="dropdownContent" id="dropdownContentDataStructures">
+                    <a href="#arrays">Arrays</a>
+                    <a href="/linkedlists/">LinkedLists</a>
+                    <a href="/stacksAndQueues/">Stacks and Queues</a>
+                    <a href="/trees/">Trees</a>
+                    <a href="/graphs/">Graphs</a>
+                    <a href="#hashmaps">HashMaps</a>
+                </div>
+            </div>
+            
+            <!--Algorithms-->
+            <div class="dropdown" id="dropdownAlgorithms">
+                <a class="mainHeader" id="headerAlgorithms">Algorithms</a>
+                
+                <div class="dropdownContent" id="dropdownContentAlgorithms">
+                    <a href="/bubbleSort/">Bubble Sort</a>
+                    <a href="#quick sort">Quick Sort</a>
+                    <a href="/dfs/">Graph: DFS</a>
+                    <a href="/bfs/">Graph: BFS</a>
+                    <a href="#binary search">Binary Search</a>
+                </div>
+            </div>
+            
+            <!--Projects-->
+            <div class="dropdown" id="dropdownProjects">
+                <a class="mainHeader" id="headerProjects">Projects</a>
+                
+                <div class="dropdownContent" id="dropdownContentProjects">
+                    <a href="/projects/sortingVisualizer/">Sorting Visualizer</a>
+                    <a href="#roadmapps">Roadmapps</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Main Content Section
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    <div class=fullScreen>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Quick Sort Definition Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Quick Sort</h1>
+            
+            <div class="paragraph">
+                Quick sort is a sorting algorithm that works off the idea of swapping values around a pivot element where all the values greater than or equal to the pivot will be on the right side of the array and all the elements less than the pivot will be on the left side. This creates a partition where we can recursively call quick sort on each side until all of the elements are sorted in place. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Quick sort does not run in a defined time complexity since it heavily depends on a pivot element. Depending on how the pivot element is selected, quick sort can run as quickly as O(N*log(N)) or be as slow as O(N^2). The latter case occuring if the pivot chosen is always the smallest or largest element in the section of the array being sorted. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                The best way to quickly grasp the concept of quick sort is to visually see an example of each step that is occurring in the algorithm. We will walk through an example of this algorithm using the following unsorted integer array.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example1.png">
+            </div>
+            
+            <div class="paragraph">
+                Before we start applying the quick sort algorithm we need to discuss the initialization of a few variables. Firstly, we need to create two variables starting at opposite ends of the section of the array that we are sorting. This will be the left pointer at index 0 and the right pointer at the last index of the array. Keep in mind that as we call quick sort recursively, the left and right pointers will be at the opposite ends of the portion of the array that we are sorting. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                Once we have our left and right pointers defined we need to determine what the pivot element should be. For simplicity, we will set the pivot value equal to the middle element between the left and right index. In our example, the middle index is 4 which contains a value of 6. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                <b>Note that the pivot is equal to the VALUE at the middle index whereas the left and right pointers refer to the index position.</b>
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example2.png">
+            </div>
+            
+            <div class="paragraph">
+                Now we can perform the main steps of quick sort which is to move all values less than the pivot value to the left side and all the values greater than the pivot to the right side. To do this, we first check what the value at the left pointer is. We want to find a value that is greater than or equal to the pivot for the left pointer so since it has a value of 4 which is less than the pivot we will move the left pointer up one index. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example3.png">
+            </div>
+            
+            <div class="paragraph">
+                The left pointer is now pointing at a value of 8 which is greater than or equal to the pivot element so we can stop moving the left pointer.
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                We now want to check the value at the right pointer. Similar to the left pointer we want to find a value that is less than or equal to the pivot. Since the right pointer is pointing at a value of 7 which is greater than the pivot element we have to decrease it in order to move it one position to the left. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example4.png">
+            </div>
+            
+            <div class="paragraph">
+                The right pointer is now pointing at the value 3 which is less than the pivot so we stop moving it at this index position. We now need to compare whether the left pointer index has exceeded the right pointer index and if not then we swap the values. The left pointer is at index position 1 while the right pointer is at index position 7 therefore left is not greater than right so we swap the values. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example5.png">
+            </div>
+            
+            <div class="paragraph">
+                After swapping the values at the left and right indexes, we move the left pointer up one index and move the right pointer down one index.  
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example6.png">
+            </div>
+            
+            <div class="paragraph">
+                We now compare whether the left index pointer has exceeded the right index pointer and if not then we continue to search for values that need to be swapped. Left is not greater than right so we check if the value at left is greater than or equal to the pivot which it is not so we move the left pointer up one index. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example7.png">
+            </div>
+            
+            <div class="paragraph">
+                The left pointer has a value of 9 which is greater than the pivot so we stop moving it. We take a look at the right pointer and we see that it has a value of 5 which is less than the pivot so we stop. We again compare if the left pointer index has exceeded the right pointer index which it has not so we swap the values.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example8.png">
+            </div>
+            
+            <div class="paragraph">
+                Again after swapping the values, we move the left pointer up and the right pointer down. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example9.png">
+            </div>
+            
+            <div class="paragraph">
+                The left pointer has a value of 6 which is equal to the pivot value so we stop moving it and the right pointer index has a value less than the pivot so it also does not move. We can swap the values because the left pointer index is still less than the right pointer index. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example10.png">
+            </div>
+            
+            <div class="paragraph">
+                Notice that the pivot will always follow the value that it was pointing at because it is equal to the value and is NOT a reference to the index position. Once we swap the values we need to increase the left pointer and decrease the right pointer. 
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example11.png">
+            </div>
+            
+            <div class="paragraph">
+                Now we can see that the left pointer has exceeded the right pointer so we are done swapping values around the pivot. If we take a moment to analyze the array we can see that all the values less than the pivot value 6 are on the left side and all values greater than or equal to the pivot are one the right side. This partition happens at the left index which is important to note because we will need this partition value when we run quick sort recursively in the actual code.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example12.png">
+            </div>
+            
+            <div class="paragraph">
+                We now see that the array is becoming progressively more sorted, so all we have to do is continue to run quick sort on each respective partitions until the array becomes completely sorted. When running quick sort recursively we will run into a point where the left or right side may only contain one element which is the base condition where we no longer have to run quick sort since a single element is already sorted in position. 
+            </div>
+            
+            <div class="paragraph noTopPadding">
+                I will quickly show each step of the recursive quick sort calls until the array becomes completely sorted.
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example13.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example14.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example15.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example16.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example17.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example18.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example19.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example20.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example21.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example22.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example23.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example24.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example25.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example26.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example27.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example28.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example29.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example30.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example31.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example32.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example33.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example34.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example35.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example36.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example37.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example38.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example39.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example40.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example41.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example42.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example43.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example44.png">
+            </div>
+            
+            <div class="sectionImage">
+                <img src="../Images/Algorithms/Quick Sort/quicksort_example45.png">
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Code Implementation Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Code Implementation</h1>
+            
+            <div class="paragraph">
+                Quick sort is a simple algorithm to implement once we understand exactly what is happening at each individual step. We will break up the quick sort algorithm into a couple different functions to keep our code clean and divide up the tasks. Firstly, we need to create the quickSort() function that takes in an integer array to be sorted. 
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br><br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Inside of this function we simply make a call to our recursive quick sort function to kick off the recursive process of this algorithm. The recursive function will be called quickSortRecursive() and will take in three parameters. The first parameter being the integer array to be sorted, the second being the left index position, and the third being the right index position. We want to set the left index to the start of the unsorted array which will be at index 0 and the right index to the last index position of the array.
+            </div>
+            
+            <div class="code codeWide">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                We can now implement the quickSortRecursive() function. As describe above, this function takes in three parameters. Note that we call the left index position leftStart and the right index position rightEnd which denotes the range that quick sort is being applied.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Inside of this function we need to first add the base case condition. This is the condition that should cause the recursive calls to terminate. This will happen when the leftStart pointer is equal to or greater than the rightEnd pointer. If the leftStart pointer is equal to the rightEnd pointer then we know immediately that there is only one element to be sorted which means that it is already in the correct sorted position so there is nothing left we need to do.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The next step is to get the pivot value. As we already know, the trick to this algorithm revolves around swapping values around the pivot element. REMEMBER that pivot refers to the value and not an index.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Once we have our pivot element we can start swapping values around it to partition the values. Remember we want to keep track of the partition index since we will be running quick sort recursively on the left side of the partition as well as the right side of the partition. We will write the logic for swapping the values and retrieving the partition index in a separate function.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Lastly, after swapping the values and getting the partition index we call quick sort recursively on the left and right sides. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Now that we have completed the quickSortRecursive() function, the last thing we need to implement is the partition function that performs the swapping of values and return the partition index. In this partition() function we will have 4 parameters, the array to be sorted, the left index position, the right index position, and the pivot value.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static int</p> partition(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> left, <p class="codePurple">int</p> right, <p class="codePurple">int</p> pivot){
+                <br>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                The partition function is where all the magic happens. We want to continue to swap values between the left and right index as long as the left index is less than or equal to the right index. 
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static int</p> partition(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> left, <p class="codePurple">int</p> right, <p class="codePurple">int</p> pivot){
+                <br>
+                <p class="indent1 codePurple">while</p>(leftStart &lt;= rightEnd){
+                <br>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Inside of the while loop we need to check if the left index has a value greater than or equal to the pivot. If not we continue to move the left pointer to the right.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static int</p> partition(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> left, <p class="codePurple">int</p> right, <p class="codePurple">int</p> pivot){
+                <br>
+                <p class="indent1 codePurple">while</p>(leftStart &lt;= rightEnd){
+                <br>
+                <p class="indent2 codePurple">while</p>(nums[left] &lt; pivot){
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Similarly, we want to check if the right index value is less than or equal to the pivot value. If not, we will move the right pointer towards the left.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static int</p> partition(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> left, <p class="codePurple">int</p> right, <p class="codePurple">int</p> pivot){
+                <br>
+                <p class="indent1 codePurple">while</p>(leftStart &lt;= rightEnd){
+                <br>
+                <p class="indent2 codePurple">while</p>(nums[left] &lt; pivot){
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2 codePurple">while</p>(nums[right] &gt; pivot){
+                <br>
+                <p class="indent3">right--;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Once we have found a left value and a right value that we want to swap we need to check whether the left pointer has exceeded the right pointer before swapping. If it hasn't we can swap the values and move the left pointer up one position and the right pointer down a position.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static int</p> partition(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> left, <p class="codePurple">int</p> right, <p class="codePurple">int</p> pivot){
+                <br>
+                <p class="indent1 codePurple">while</p>(left &lt;= right){
+                <br>
+                <p class="indent2 codePurple">while</p>(nums[left] &lt; pivot){
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2 codePurple">while</p>(nums[right] &gt; pivot){
+                <br>
+                <p class="indent3">right--;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2 codePurple">if</p>(left &lt;= right){
+                <br>
+                <p class="indent3 codePurple">int</p> temp = nums[left];
+                <br>
+                <p class="indent3">nums[left] = nums[right];</p>
+                <br>
+                <p class="indent3">nums[right] = temp;</p>
+                <br><br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent3">right--;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br>
+                }
+            </div>
+            
+            <div class="paragraph">
+                Lastly, once we have completed swapping the values to their correct sides we must return the partition point. Recall that this partition point is equal to the value of the left index pointer. Therefore the completed quick sort algorithm is as follows.
+            </div>
+            
+            <div class="code codeWideFinal">
+                <p class="codePurple">public static void</p> quickSort(<p class="codePurple">int</p>[] nums){
+                <br>
+                <p class="indent1">quickSortRecursive(nums, 0, nums.length-1);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static void</p> quickSortRecursive(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> leftStart, <p class="codePurple">int</p> rightEnd){
+                <br>
+                <p class="indent1 codePurple">if</p>(leftStart >= rightEnd){
+                <br>
+                <p class="indent2 codePurple">return</p>;
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">int</p> pivot = nums[leftStart + (rightEnd - leftStart)/2];
+                <br>
+                <p class="indent1 codePurple">int</p> index = partition(nums, leftStart, rightEnd, pivot);
+                <br><br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on left portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, leftStart, index-1);</p>
+                <br>
+                <p class="indent1 codeComment">// Calling quick sort recursively on right portion of partition</p>
+                <br>
+                <p class="indent1">quickSortRecursive(nums, index, rightEnd);</p>
+                <br>
+                }
+                <br><br>
+                <p class="codePurple">public static int</p> partition(<p class="codePurple">int</p>[] nums, <p class="codePurple">int</p> left, <p class="codePurple">int</p> right, <p class="codePurple">int</p> pivot){
+                <br>
+                <p class="indent1 codePurple">while</p>(left &lt;= right){
+                <br>
+                <p class="indent2 codePurple">while</p>(nums[left] &lt; pivot){
+                <br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2 codePurple">while</p>(nums[right] &gt; pivot){
+                <br>
+                <p class="indent3">right--;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br><br>
+                <p class="indent2 codePurple">if</p>(left &lt;= right){
+                <br>
+                <p class="indent3 codePurple">int</p> temp = nums[left];
+                <br>
+                <p class="indent3">nums[left] = nums[right];</p>
+                <br>
+                <p class="indent3">nums[right] = temp;</p>
+                <br><br>
+                <p class="indent3">left++;</p>
+                <br>
+                <p class="indent3">right--;</p>
+                <br>
+                <p class="indent2">}</p>
+                <br>
+                <p class="indent1">}</p>
+                <br><br>
+                <p class="indent1 codePurple">return</p> left;
+                <br>
+                }
+            </div>
+        </div>
+        
+        <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Time Complexity Section
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+        <div class="sectionDivider">
+            <h1 class="headerCenter">Time and Space Complexity</h1>
+            
+            <div class="paragraph">
+                We breifly discussed the time complexity of quick sort at the very beginning where it was mentioned that quick sort can run as efficiently as O(N*log(N)) and as slow as O(N^2). The pivot value plays a crucial role in time complexity and there are many ways to select a 'good' pivot each time to prevent a quadratic runtime. Many times we assume that the pivot is chosen such that the value hovers somewhere in the middle of the section being sorted and thus should have an average runtime of O(N*log(N)). This is quite an improvement to bubble sort which computes in quadratic time but is equal to the run time of merge sort. The main benefit of selecting quick sort over merge sort is that quick sort doesn't require any additional space whereas merge sort relies on a temp array that is equal to the size of the input array. Because of this we can say that quick sort has a constant space complexity of O(1) which is better than the space complexity of O(N) from merge sort. Now depending on the arrangement of the array quick sort may be slower than merge sort so it is always good to consider the trade offs between time and space complexity when choosing which algorithm to use.
+            </div>
+        </div>
+        
+    </div>
+    
+    <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    Footer
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
+    
+    <footer>
+     
+      <!-- Footer social -->
+      <section class="ft-social">
+        <ul class="ft-social-list">
+          <li><a href="#"><i class="fa fa-facebook fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-github fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-youtube fa-2x"></i></a></li>
+        </ul>
+      </section>
+     
+      <!-- Footer legal -->
+      <!--<section class="ft-legal">
+        <ul class="ft-legal-list">
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li>&copy; 2019 Copyright Roadmapp Inc.</li>
+        </ul>
+      </section>-->
+    </footer>
+	
+</body>
+</html>
