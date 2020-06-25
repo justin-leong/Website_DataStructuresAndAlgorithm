@@ -46,7 +46,7 @@ p{
 
 .fullScreen{
     width: 1300px;
-    min-height: 750px;
+    min-height: 800px; /*750*/
     background-color: black;
     margin: 0 auto;
     text-align: center;
@@ -98,7 +98,7 @@ Main Body Content
     height: auto; /*360*/
     /*background-color: red;*/
     display: inline-block;
-    padding: 30px;
+    padding: 30px 0 30px 0; /*30*/
     background-color: black;
     border-bottom: 1px solid white;
 }
@@ -107,7 +107,7 @@ Main Body Content
     width: 160px; /*250 200*/
     height: auto;
     padding: 10px;
-    margin: 40px 0; /*65*/
+    margin: 65px 0; /*65 40*/
     margin-left: 0px; /*40*/
     border: 5px solid black; /*#7BEBEB;*/
     border-radius: 500px;
@@ -122,12 +122,14 @@ Main Body Content
 }
 
 .profileParagraph{
-    width: 560px; /*850 720*/
-    height: 260px;
-    margin-left: 20px; /*50*/
-    padding: 30px 20px; /*40*/
+    width: 580px; /*850 720 560*/
+    height: 300px; /*260*/
+    margin-left: 40px; /*50 20*/
+    padding: 15px 0; /*40, 30 20*/
     font-size: 13px; /*20 16*/
     font-family: sans-serif;
+    text-indent: 50px;
+    text-align: left;
     letter-spacing: 2px;
     line-height: 30px; /*40 36*/
     color: white;
@@ -464,7 +466,7 @@ body {
 /* line up social footer */
 
 .ft-social{
-    background-color: #FDF8F2;
+    background-color: #FFFFFF; /*#FDF8F2*/
 }
 
 .ft-social-list {
