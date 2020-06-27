@@ -106,19 +106,20 @@ Main Body Content
 .profilePicContainer{
     width: 160px; /*250 200*/
     height: auto;
-    padding: 10px;
+    padding: 0px;
     margin: 65px 0; /*65 40*/
     margin-left: 0px; /*40*/
     border: 5px solid black; /*#7BEBEB;*/
-    border-radius: 500px;
-    background-color: white; /*#D9FFDF;*/
+    border-radius: 30px; /*500*/
+    background-color: black; /*#D9FFDF;*/
     float: left;
-    
+    text-align: center;
 }
 
 .profilePicImage{
-    border: 4px solid black; /*#7BEBEB;*/
-    border-radius: 200px;
+    border: 0px solid black; /*#7BEBEB;*/
+    margin: 1px;
+    border-radius: 40px; /*200*/
 }
 
 .profileParagraph{
@@ -325,8 +326,7 @@ Header Styling
 
 /*Header*/
 header{
-    
-    padding-top: 15px;
+    /*padding-top: 15px;*/
     padding-left: 20px;
     width: auto;
     min-width: 1300px;
@@ -337,10 +337,22 @@ header{
     /*border: 1px solid black;*/
 }
 
-.name{
-    width: 160px; /*210*/
+.logo{
+    width: 40px; /*210*/
     height: auto;
-    padding: 10px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+    color: black;
+}
+
+.name{
+    width: 170px; /*210 160*/
+    height: auto;
+    padding: 22px 15px 22px 15px;
     display: inline-block;
     font-family: sans-serif;
     font-size: 18px;
@@ -355,6 +367,7 @@ header{
 
 .navbar{
     width: auto;
+    padding-top: 16px;
     min-width: 10px; 
     height: auto;
     font-family: sans-serif;
@@ -430,58 +443,61 @@ header{
     font-weight: bold;
 }
 
-ul,li,li a
-
-{
-    /*color:#36454f;*/
-    color: #182a55; /*#7BEBEB;*/
-    font-family:  sans-serif;
-    
-}
-
-li a:hover
-{
-    color:midnightblue;
-    
-}
-
 /*------------------------------------------------------
 Footer Styling
 -------------------------------------------------------*/
 footer {
-    background-color: #555;
-    color: #bbb;
-    line-height: 1.5;
     margin-top: 60px;
+    padding: 10px 0 10px 0;
+    width: auto;
+    min-width: 1300px;
+    position: relative;
+    background-color: white;
+    display: inline-block;
+}
+
+.footerLogo{
+    width: 18px; /*210*/
+    height: auto;
+    margin: 0 7px 0 7px;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+    color: black;
+}
+
+ul, li, li a{
+    color: black; /*#7BEBEB;*/
+    font-family:  sans-serif;
+}
+
+li a:hover{
+    color: midnightblue;
 }
 
 
-/* Stick footer to bottom of the page*/
+/* Fix footer to bottom of page*/
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-/* line up social footer */
-
-.ft-social{
+.footerSocial{
     background-color: #FFFFFF; /*#FDF8F2*/
 }
 
-.ft-social-list {
+.footerSocialList {
     display: flex;
     justify-content: center;
-    border-top: 1px #777 solid; 
-    /*padding-top: 1.25rem;*/
-    /*padding: 10px 0;*/
 }
 
-.ft-social-list li {
+.footerSocialList li {
     margin: 0.5rem;
     font-size: 1.25rem;
     text-decoration: none;
-    
 }
 
 
