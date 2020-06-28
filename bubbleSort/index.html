@@ -33,7 +33,7 @@
         <div class="navbar">
             <!--Home-->
             <div class="dropdown" id="dropdownHome">
-                <a class="mainHeader" id="headerHome" href="../index.html">Home</a>
+                <a class="mainHeader" id="headerHome" href="../">Home</a>
             </div>
             
             <!--Data Structures-->
@@ -87,15 +87,15 @@
             <h1 class="headerCenter">Bubble Sort</h1>
             
             <div class="paragraph">
-                The bubble sort algorithm is in my opinion the easiest sorting algorithm to understand and conceptualize. Like any sorting algorithm, the purpose is to sort the values in a desired sequence and in this case we will be sorting the values from smallest to largest or in other words, natural ordering. 
+                The bubble sort algorithm is a beginner friendly sorting algorithm that is easy to understand and translate into code. Similar to any sorting algorithm, the purpose is to sort the values into a desired sequence usually in ascending order from left to right.
             </div>
             
             <div class="paragraph noTopPadding">
-                Bubble sort achieves this task by looking at the first two values in an array and comparing which value is larger. Since we are sorting from smallest to largest, we want the smaller values to be on the left hand side and the larger values to be on the right hand side. If the left value is smaller than the right value then we know that the pair is in the correct order and can move onto the next pair. If the left value is greater than the right value then we have to swap the placement of the values before moving onto the next pair. The next pair will be the indexes of the previous pairs plus 1, thus one of the values in the old pair will be compared in the new pair. This pair comparison is repeated until reaching the end of the array where the largest value in the array will “bubble” to the end of the array. Now this entire procedure is repeated until all the values in the array have been sorted.
+                Bubble sort achieves this task by looking at the values in the first two index positions of an array and compares which value is larger. Since we are sorting from smallest to largest, we want the smaller values to be on the left side and the larger values to be on the right side. If the value located at the left index position is smaller than the value at the right index position then we know that the values in the current pairing are in the correct order and can move onto the next index pairing. Otherwise, if the value at the left index position is greater than the value at the right index position then we must swap the placement of the values before moving onto the next index pairing. The next pairing will always be the indexes of the previous pairing plus 1, thus one of the values in the old pair will be evaluated in the new pair. This comparison between pairs is repeated until the end of the array has been reached where the largest value will eventually “bubble” to the end of the array. This entire procedure is repeated until all the values in the array are in their correct positions, resulting in a sorted array.
             </div>
             
             <div class="paragraph noTopPadding">
-                In the following example, we start off by comparing the first two elements in the array. The reference pointer “Left” is targeting index 0 of the array while the pointer “Right” is at index 1. We compare whether the left value is less than the right value and if not then we swap the positions of the values with one another.
+                To better conceptualize this algorithm we will walk through a simple example. In the following example, we start off by comparing the first two elements in the array. The reference pointer “Left” is initially set to index 0 of the array while the pointer “Right” is set to index 1. We compare whether the left value is greater than the right value and if so then we swap the positions of the values with one another since we want the smaller value on the left side and the larger value on the right.
             </div>
             
             <div class="sectionImage">
@@ -103,7 +103,7 @@
             </div>
             
             <div class="paragraph">
-                In this case, since 3 is not less than 1 we swap the values. 
+                In this case, the value at the left index is 3 and the value at the right index is 1. Since the value at the left index is greater than the value at the right index we must swap the values. 
             </div>
             
             <div class="sectionImage">
@@ -111,7 +111,7 @@
             </div>
             
             <div class="paragraph">
-                After comparing the first pair, we take a look at the next pair which are at index 1 and index 2. Since 3 is smaller than 5 we can move onto the next pair since these values are in the correct positions.
+                After comparing the first pair, we move the left and right pointers up one position to index 1 and index 2 respectively. 
             </div>
             
             <div class="sectionImage">
@@ -119,7 +119,7 @@
             </div>
             
             <div class="paragraph">
-                Now we are comparing index 2 with index 3. Since 5 is greater than 4 we know that it should be on the right side and 4 should be on the left side so we must swap the two values.
+                We now compare the values at the indexes where we see that 3 is smaller than 5 so we can move onto the next pairing since these values are in the correct position.
             </div>
             
             <div class="sectionImage">
@@ -131,7 +131,7 @@
             </div>
             
             <div class="paragraph">
-                We now compare the last pair and have to swap the values since 5 is greater than 2. 
+                Again we move the left and right indexes up a position to index 2 and index 3 then compare the values. Since 5 is greater than 4 we know that it should be on the right side and 4 should be on the left side so we must swap the two values.
             </div>
             
             <div class="sectionImage">
@@ -143,7 +143,11 @@
             </div>
             
             <div class="paragraph">
-                We have now reached the end of our array and the result is that 5 has landed in its correct spot in the array since it is the largest value in the array and thus must be at the end or the array. We can now repeat the same steps until each of the next largest values continue to bubble to the right side of the array. This will eventually result in our array being completely sorted.
+                We now compare the last index pairing and have to swap the values since 5 is greater than 2. We know that this is the last pairing since the right pointer has reached the end of the array and has no other values to evaluate.
+            </div>
+            
+            <div class="paragraph">
+                We have now reached the end of our array and the result is that 5 has landed in its correct position since it is the largest value in the array and thus must be at the very end of the array. We can now repeat the same steps until each of the next largest values continue to bubble to the right side of the array. This will eventually result in our array being completely sorted.
             </div>
             
             <div class="sectionImage">
@@ -187,7 +191,7 @@
             </div>
             
             <div class="paragraph">
-                Note that for the last comparison, when we determine the correct value for index 1 it automatically determines the placement for index 0. Knowing this, we can save ourselves an additional iteration.
+                Note that for the last comparison, when we determined the correct value at index 1 it automatically determines the placement for the value at index 0 as well. Knowing this, we can save ourselves an additional iteration when we translate this algorithm into code.
             </div>
             
             <div class="sectionImage">
@@ -202,31 +206,31 @@
             <h1 class="headerCenter">Code Implementation</h1>
             
             <div class="paragraph">
-                The bubble sort algorithm is pretty easy to implement since we are just iterating through the array and swaping the values of pairs if they are not in the correct order. The main trick to this algorithm is knowing how many times we need to iterate through the array.
+                The bubble sort algorithm is pretty easy to implement since we are just iterating through the array and swapping the values of pairs if the left value is greater than the right value. The key to this algorithm is knowing how many times we need to iterate through the array.
             </div>
             
             <div class="paragraph noTopPadding">
-                When we think about our loop structure, we know that we need one for loop that iterates through the array and bubbles the largest value to the end of the array. This will be the inner loop. Now, how many times will we need to repeat the bubbling of the largest value that has not been placed in its correct spot? The answer is simple, we will have to repeat this N times where N is the number of elements in the array. The reason for this is that each time we run through the inner loop we are only placing one of the values in the correct position. Since we want all of the values to be in the correct position we will need an outer loop that runs N number of times. Now we can optimize this a little since we know that running the Nth time and Nth - 1 time will be the same operation so really we only need to run the outer loop N - 1 times. 
+                If we think about the loop structure, we know that we need a for loop that iterates through the entire array and bubbles the largest value to the end of the array (this will be the inner loop). Now, how many times will we need to repeat the bubbling of the next largest value to its correct position? The answer is simple, we will have to repeat this N times where N is the number of elements in the array since all of the values need to bubble to their correct position. The reason for this is that each time we run through the inner loop we are only placing one of the values in the correct position. Since we want all of the values to be in the correct position we will need an outer loop that runs N number of times. We can slightly optimize this since we know that running the Nth iteration and Nth - 1 iteration will result in the same operation so really we only need to run the outer loop N - 1 times. If this slight optimization is confusing you can just set the outer loop to run N number of times as this will still result in the correct solution.
             </div>
             
             <div class="paragraph noTopPadding">
-                We will start building this function by setting the function name to 'bubbleSort' which will accept an interger array as a parameter. Since we are manipulating the array in the function and the parameter is an object, we do not have to return anything back to the main function and can set the return type to void. This is an example of pass by reference in Java.  
+                To begin constructing this algorithm, we will start by creating a function called 'bubbleSort' which will accept an array of integers as a parameter. Since we are manipulating the values in the array within the function, and arrays are pass by reference in Java, we do not have to return anything back to the main function and can set the return type to void. Pass by reference simply means that an object being changed within a function will retain the changes made to it.
             </div>
             
             <div class="code codeWide">
-                <p class="codePurple">public static void</p> bubbleSort(int[] nums){
+                <p class="codePurple">public static void</p> bubbleSort(<p class="codePurple">int</p>[] nums){
                 <br><br>
                 }
             </div>
             
             <div class="paragraph">
-                We can now add the outer for loop which will iterate N - 1 number of times. Recall that N is the number of elements in the array which can be access via the length attribute.
+                We will now add the outer for loop which will start at 0 and iterate N - 1 number of times. Recall that N is the number of elements in the array which can be access via the length attribute. Note that this for loop corresponds to the number of values that need to bubble to their correct placement in the array.
             </div>
             
             <div class="code codeWide">
-                <p class="codePurple">public static void</p> bubbleSort(int[] nums){
+                <p class="codePurple">public static void</p> bubbleSort(<p class="codePurple">int</p>[] nums){
                 <br>
-                <p class="indent1 codePurple">for</p>(int i=0; i&lt;nums.length-1; i++){
+                <p class="indent1 codePurple">for</p>(<p class="codePurple">int</p> i=0; i&lt;nums.length-1; i++){
                 <br>
                 <br>
                 <p class="indent1">}</p>
@@ -235,15 +239,15 @@
             </div>
             
             <div class="paragraph">
-                We will now add the inner loop which will iterate through the array and compare each pair. Since we are walking through each PAIR in the array this will need to be done N - 1 number of times. To simplify this, we will start the loop counter at a value of 1 and iterate until hitting the last index  in the array. 
+                We will now add the inner loop which will iterate through the array and compare the values at the left and right indexes. Since we are walking through each PAIR in the array this will need to be done N - 1 number of times. To simplify this, we will start the loop counter at a value of 1 and iterate until hitting the last index in the array. An easy way to understand why we run N - 1 number of times is because the right pointer will start at index 1 and run until the last index in the array which equates to N - 1.
             </div>
             
             <div class="code codeWide">
-                <p class="codePurple">public static void</p> bubbleSort(int[] nums){
+                <p class="codePurple">public static void</p> bubbleSort(<p class="codePurple">int</p>[] nums){
                 <br>
-                <p class="indent1 codePurple">for</p>(int i=0; i&lt;nums.length-1; i++){
+                <p class="indent1 codePurple">for</p>(<p class="codePurple">int</p> i=0; i&lt;nums.length-1; i++){
                 <br>
-                <p class="indent2 codePurple">for</p>(int j=1; j&lt;nums.length; j++){
+                <p class="indent2 codePurple">for</p>(<p class="codePurple">int</p> j=1; j&lt;nums.length; j++){
                 <br>
                 <br>
                 <p class="indent2">}</p>
@@ -254,19 +258,19 @@
             </div>
             
             <div class="paragraph">
-                Now comes the interesting part of the algorithm. We need to compare each of the pairs and check whether the left index is smaller or greater than the right index, then swap the values if needed. We know that we want  our left pointer to start at index 0 and our right pointer to start at index 1. We can utilize j to accomplish this by subtracting 1 from it to get the left pointer and having j be the right pointer. As j increases so will the left and right pointers.
+                Now comes the interesting part of the algorithm. We need to compare each of the pairs and check whether the value at the left index is smaller or greater than the value at the right index, then swap the values if needed. We know that we want our left pointer to start at index 0 and our right pointer to start at index 1. We can utilize j to accomplish this by subtracting 1 from it to get the left pointer  index and having j be the value of the right pointer index. As j increases so will the left and right index values.
             </div>
             
             <div class="paragraph noTopPadding">
-                Once we have established how to get our left and right pairs, we now need to check if the left value is smaller than the right value. We can do this with an if statement. Swapping the pairs is now a simple operation.
+                Once we have established the left and right pointers, we now need to compare the values at these pointers. This comparison can be done with a simple if statement where we want to swap the values if the value at the left index is greater than the value at the right index. Swapping the pairs is now a simple operation where we utilize a tempNum variable to perform the swap.
             </div>
             
             <div class="code codeWide">
-                <p class="codePurple">public static void</p> bubbleSort(int[] nums){
+                <p class="codePurple">public static void</p> bubbleSort(<p class="codePurple">int</p>[] nums){
                 <br>
-                <p class="indent1 codePurple">for</p>(int i=0; i&lt;nums.length-1; i++){
+                <p class="indent1 codePurple">for</p>(<p class="codePurple">int</p> i=0; i&lt;nums.length-1; i++){
                 <br>
-                <p class="indent2 codePurple">for</p>(int j=1; j&lt;nums.length; j++){
+                <p class="indent2 codePurple">for</p>(<p class="codePurple">int</p> j=1; j&lt;nums.length; j++){
                 <br>
                 <p class="indent3 codePurple">if</p>(nums[j-1] &gt; nums[j]){
                 <br>
@@ -286,15 +290,15 @@
             </div>
             
             <div class="paragraph">
-                Our bubble sort function is now complete, however we can slightly optimize this function since we know that each time an interation has been perform on the array then the right most unsorted index will become sorted. As such we no longer need to compare that value and thus in the inner array we just have to iterate until nums.length - i.
+                Our bubble sort function is now complete, however we can slightly optimize this function since we know that each time the inner for loop completes a full iteration of the array, the right most unsorted index position will become sorted. As such, we no longer need to compare that value in the next iteration and thus can update the inner for loop to iterate until nums.length - i.
             </div>
             
             <div class="code codeWide">
-                <p class="codePurple">public static void</p> bubbleSort(int[] nums){
+                <p class="codePurple">public static void</p> bubbleSort(<p class="codePurple">int</p>[] nums){
                 <br>
-                <p class="indent1 codePurple">for</p>(int i=0; i&lt;nums.length-1; i++){
+                <p class="indent1 codePurple">for</p>(<p class="codePurple">int</p> i=0; i&lt;nums.length-1; i++){
                 <br>
-                <p class="indent2 codePurple">for</p>(int j=1; j&lt;nums.length-i; j++){
+                <p class="indent2 codePurple">for</p>(<p class="codePurple">int</p> j=1; j&lt;nums.length-i; j++){
                 <br>
                 <p class="indent3 codePurple">if</p>(nums[j-1] &gt; nums[j]){
                 <br>
@@ -315,13 +319,13 @@
         </div>
         
         <!--%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        Time Complexity Section
+        Time and Space Complexity Section
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%-->
         <div class="sectionDivider">
-            <h1 class="headerCenter">Time Complexity</h1>
+            <h1 class="headerCenter">Time and Space Complexity</h1>
             
             <div class="paragraph">
-                It is always beneficial to consider the time complexity of a function because a function that can perform its task faster than another function is always better (assuming space complexity is the same). Bubble sort is a very straight forward algorithm to understand and implement, however if we analyze the time that it takes to run we will realize that it is pretty inefficient due to the fact that we are iterating through our array multiple times. We iterate through our array to bubble the largest value to the right hand side and repeat this operation for the number of elements in the array. This nested looping results in an O(N^2) time complexity which is quadratic. As we explore other sorting algorithms we will find that O(N^2) time is pretty slow since there are other sorting algorithms that can run in O(N*log N) time complexity such as quick sort. If you are interested, check out my implementation of other sorting algorithms in the algorithms section of this site.
+                It is always good practice to consider the time complexity of an algorithm because we want to accomplish our desired task as efficiently as possible. It is also very important to know the time complexity of an algorithm so that we can compare it to other algorithms that perform the same task to evaluate which method is better. As we have discovered, bubble sort is a very straight forward algorithm to understand and implement. The time complexity of this algorithm however is pretty inefficient due to the fact that we are iterating through the array multiple times. We iterate through the array to bubble the largest value to the right side and repeat this operation for the number of elements in the array. This nested looping results in a quadratic O(N^2) time complexity which can be improved upon. As we explore other sorting algorithms, we will find that O(N^2) time is pretty slow since there are other sorting algorithms that can run in O(N*log N) time complexity such as merge sort and quick sort. It is good to keep in mind that even though there are faster sorting algorithms out there it does not mean that those algorithms are necessarily better since they may come with tradeoffs such as additional space usage. Bubble sort has a slow time complexity, however it has a great space complexity of O(1) since it doesn't require additional space due to the fact that all the sorting is done in place. If you are curious about other sorting algorithms, check out my sections on merge sort and quick sort!
             </div>
         </div>
         
