@@ -33,7 +33,7 @@
         <div class="navbar">
             <!--Home-->
             <div class="dropdown" id="dropdownHome">
-                <a class="mainHeader" id="headerHome" href="../index.html">Home</a>
+                <a class="mainHeader" id="headerHome" href="../">Home</a>
             </div>
             
             <!--Data Structures-->
@@ -87,7 +87,7 @@
             <h1 class="headerCenter">Depth First Search (DFS)</h1>
             
             <div class="paragraph">
-                Depth First Search (DFS) is an algorithm used to traverse a graph by first exploring deep before exploring wide. This algorithm is a useful approach to ensure that every node in a graph has been visited and no path has been unaccounted for. The concept of exploring deep before wide may initially seem confusing, however walking through a simple example will clarify this process. 
+                Depth First Search (DFS) is an algorithm used to traverse a graph by first exploring deep before exploring wide. This algorithm ensures that every path starting from a particular node has been accounted for. We will walk through a simple example to explore and clarify the concept DFS.
             </div>
             
             <div class="paragraph noTopPadding">
@@ -99,7 +99,7 @@
             </div>
             
             <div class="paragraph">
-                 Visually we can see that there are multiple paths that could lead us from A to E. Three trivial paths that we can immediately see are [A->B->C->E], [A->C->E], and [A->D->E]. Another more complicated path could be, [A->B->C->A->D->A->B->C->E] which is valid however we are visiting the same nodes multiple times before reaching the desired destination. In order to avoid the repetition of already visited paths, we will have a data structure that keeps track of the nodes that we have already visited so that we avoid any possible cycles. 
+                 Visually, we can see that there are multiple paths that could lead us from node A to E. Three trivial paths that we can immediately see are [A->B->C->E], [A->C->E], and [A->D->E]. Another more complicated path could be [A->B->C->A->D->A->B->C->E], which is valid however we are visiting the same nodes multiple times before reaching the desired destination node. In order to avoid the repetition of already visited paths we will have a data structure that keeps track of the nodes that we have already visited so that we avoid any possible cycles. 
             </div>
             
             <div class="paragraph noTopPadding">
@@ -115,7 +115,7 @@
             </div>
             
             <div class="paragraph">
-                 Since A is not equal to E, we need to see what options/paths we have access to. These paths are the adjacent nodes that A is connected to which are B, C and D. If we recall the Graph data structure, we know that every node has a LinkedList which contains the nodes that the current node is connected to, we will call this list ‘adjacent’. For our example we can assume that node A’s adjacent list looks like this [B, C, D]. Since B is the first item in the list we will choose to take that path before checking path C and D. 
+                 Since A is not equal to E, we need to see what options/paths we have access to. These paths are the adjacent nodes that A is connected to which are B, C and D. If we recall the Graph data structure, we know that every node has a LinkedList which contains the adjacent nodes that the current node is connected to, we will call this list ‘adjacent’. For our example, we can assume that node A’s adjacent list looks like this [B, C, D]. Since B is the first item in the list we will choose to take that path before checking paths C and D. 
             </div>
             
             <div class="sectionImage">
@@ -123,7 +123,7 @@
             </div>
             
             <div class="paragraph">
-                 We are now at node B so we compare if B is equal to our destination node E. This is not the case, so we now check what paths we can take from node B. Node B has an adjacent list that contains [A, C] in this order so we first go to node A before going to C. 
+                 We are now at node B so we compare if B is equal to our destination node E. This is not the case, so we now check what paths we can take from node B. Node B has an adjacent list that contains [A, C] in this order. Thus we first go to node A before going to C. 
             </div>
             
             <div class="sectionImage">
@@ -131,7 +131,7 @@
             </div>
             
             <div class="paragraph">
-                 Now we have already been to node A and checked if A is equal to E so this is redundant. This is where we need another data structure to contain all of the nodes we have visited already. So far we have travelled to node A and node B so this ‘visited’ list will contain those two nodes. If we have visited a node already then we want to just go back to the previous node and check the next item in the adjacent node list. In this case, we’ve been to A so we return back to B and the next item in node B’s adjacent list is C.
+                 Now we have already been to node A and checked if A is equal to E so this is redundant. This is where we need another data structure to contain all of the nodes we have already visited. So far we have travelled to node A and node B so this ‘visited’ list will contain those two nodes. If we have visited a node already then we want to just go back to the previous node and check the next item in the adjacent node list. In this case, we’ve been to A so we return back to B and check the next item in node B’s adjacent list which is C.
             </div>
             
             <div class="sectionImage">
@@ -143,7 +143,7 @@
             </div>
             
             <div class="paragraph">
-                 We now check if we have visited C (which we have not), add it to the visited list, then compare if C is the destination we are looking for. We repeat the procedure again with the adjacent nodes of C which looks like [B, A, E]. We first go to B but realize we have been here before so we go back to C.
+                 We now check if we have visited C (which we have not), add it to the visited list, then compare whether C is the destination node we are looking for. We repeat this procedure again with the adjacent nodes of C which looks like this [B, A, E]. We first go to B but realize we have already been there before so we go back to C.
             </div>
             
             <div class="sectionImage">
@@ -155,7 +155,7 @@
             </div>
             
             <div class="paragraph">
-                 Now we go to A, but similarly we have been here before so we go back to C.
+                 Now we go to A, but similarly we have already been there before too so we go back to C.
             </div>
             
             <div class="sectionImage">
@@ -167,7 +167,7 @@
             </div>
             
             <div class="paragraph">
-                 We now go to E where we realize that this matches the destination we are looking for and can return true since we have confirmed that there is a path from A to E.
+                 We now go to E where we realize that this is the destination node that we are looking for and will return true since we have confirmed that there is a path from A to E.
             </div>
             
             <div class="sectionImage">
@@ -175,11 +175,11 @@
             </div>
             
             <div class="paragraph">
-                 Note that we did not end up checking the adjacent nodes from A to C or A to D because we went down the B path which lead us down the path to C then down the path to E. This is what is meant by exploring deep before wide. If we were to explore wide, we would check all of the adjacent nodes connected to A (B, C, D) prior to checking the connections of B, C, and D. Exploring wide before deep is an example of the breath first search (BFS) algorithm and is further explained in the BFS section under algorithms. 
+                 Note that we did not end up checking the adjacent nodes from A to C or A to D because we went down the B path which lead us down the path to C then down the path to E. This is the concept of exploring deep before wide. If we were to explore wide, we would check all of the adjacent nodes connected to A (B, C, D) prior to checking the connections of B, C, and D. Exploring wide before deep is an example of the breadth first search (BFS) algorithm and is another topic that I cover under my algorithms section. 
             </div>
             
             <div class="paragraph noTopPadding">
-                 Also note that we did not end up visiting node D in our example, however if we were just to run the DFS algorithm without searching for a specific node then we would end up visiting all the nodes.
+                 Also note that we did not end up visiting node D in our example, however if we were to run the DFS algorithm searching for a specific node that doesn't exist in the graph then we would end up visiting all of the nodes. DFS can be implemented in a variety of ways depending on the problem you are trying to solve, however the key concept of searching deep before wide is what your DFS algorithm should be built around. 
             </div>
         </div>
         
@@ -190,11 +190,11 @@
             <h1 class="headerCenter">Code Implementation</h1>
             
             <div class="paragraph">
-                The DFS algorithm can be implemented both iteratively and recursively. The following code implementation will be done recursively, however can be slightly modified to make it iterative.
+                The DFS algorithm can be implemented both iteratively and recursively. The following code implementation will be done recursively, however it can be slightly modified to convert it into an iterative solution.
             </div>
             
             <div class="paragraph noTopPadding">
-                To begin the implementation of DFS, we will create a function called hasPathDFS() which accepts two parameters. The first parameter is the value of the start location and the second is the value of the destination that we are searching for. This function will return true if it can find a valid path from the start node to the destination node or else it will return false.
+                To begin the implementation of DFS, we will create a function called hasPathDFS() which accepts two parameters. The first parameter is the value of the start location and the second is the value of the destination that we are searching for. We will assume that our graph will contain strings as values. This function will return true if it can find a valid path from the start node to the destination node or else it will return false.
             </div>
             
             <div class="code codeWideFinal">
@@ -204,7 +204,7 @@
             </div>
             
             <div class="paragraph">
-                The first task to implement is to find the node references that relate to the input parameters. We can find the node references because we know that the Graph data structure contains a HashMap, which we will refer to as nodeLookup, containing all of the nodes in a graph. 
+                The first task to implement is to get the node references that relate to the input parameters. We can find the node references because we know that the Graph data structure contains a HashMap (which we will refer to as 'nodeLookup') containing all of the node objects in the graph. 
             </div>
             
             <div class="code codeWideFinal">
@@ -218,7 +218,7 @@
             </div>
             
             <div class="paragraph">
-                Before we begin traversing for the node we can perform a quick check to make sure that the nodes exist in the graph. If either of the nodes don't exist then there is no reason to go searching for whether there is a path because we immediately know that there can't be one. 
+                Before we begin traversing for the node, we can perform a quick check to make sure that the nodes exist in the graph. If either of the nodes do not exist in the graph then there is no reason to go searching for whether there is a path between them. 
             </div>
             
             <div class="code codeWideFinal">
@@ -238,7 +238,7 @@
             </div>
             
             <div class="paragraph">
-                The next item to consider in the function is how to keep track of the nodes that we have already visited. This can easily be done using a Set data structure, where we continue to update the nodes in this set every time we visit a new node.
+                The next item to consider in the function is how to keep track of the nodes that we have already visited. This can easily be done using a Set data structure where we continue to update the nodes in this set every time we visit a new node.
             </div>
             
            <div class="code codeWideFinal">
@@ -260,7 +260,7 @@
             </div>
             
             <div class="paragraph">
-                We have now prepared the basic items for our DFS algorithm, however we now need to make a call to another function which will be the recursive function that performs the actual DFS. We will call this recursive function dfs() which will search for the destination node and return true if it has found it. 
+                We have now prepared the basic items for our DFS algorithm, however we now need to make a call to another function which will be the recursive function that performs the actual DFS. We will call this recursive function dfs(), which will search for the destination node and return true if it has found it. 
             </div>
             
             <div class="code codeWideFinal">
@@ -298,7 +298,7 @@
             </div>
             
             <div class="paragraph noTopPadding">
-                The first thing we need to check is to see if we have visited this current node that we are on before and if we have then we immediately return false. If we have not been to this node before then we want to add it to our visited list.
+                The first thing we need to check is to see if we have visited this current node that we are on before and if we have then we immediately return false. If we have not been to this node before then we want to add it to our visited set list.
             </div>
             
             <div class="code codeWideFinal">
@@ -316,7 +316,7 @@
             </div>
             
             <div class="paragraph noTopPadding">
-                Next we want to check if the current node that we are on is the destination node we are looking for then we can return true.
+                Next we want to check if the current node that we are on is the destination node that we are looking for. If it is then we can return true.
             </div>
             
             <div class="code codeWideFinal">
