@@ -33,7 +33,7 @@
         <div class="navbar">
             <!--Home-->
             <div class="dropdown" id="dropdownHome">
-                <a class="mainHeader" id="headerHome" href="../index.html">Home</a>
+                <a class="mainHeader" id="headerHome" href="../">Home</a>
             </div>
             
             <!--Data Structures-->
@@ -87,7 +87,7 @@
             <h1 class="headerCenter">LinkedLists</h1>
             
             <div class="paragraph">
-                A LinkedList is a data structure that represents a list of items that are connected linearly. The items in the list are represented by nodes that contain data such as strings, integers, characters, or objects. The data can be accessed by traversing each node in the sequence, starting at the head position, until reaching the desired node location. The LinkedList data structure can be created as either a singly or doubly LinkedList. The difference between a singly LinkedList and a doubly LinkedList is whether a node has access to only the next node in the list or if a node has access to both the previous and next node. A LinkedList with access to only the next node in the list is referred to as a singly LinkedList while nodes having access to their previous node makes the list a doubly LinkedList.
+                A LinkedList is a data structure that represents a list of items that are connected in a linear sequence. The items in the list are represented by nodes that contain data such as strings, integers, characters, or objects. The data can be accessed by traversing each node in the sequence, starting at the head position, until reaching the desired node location. The LinkedList data structure can be created as either a singly or doubly LinkedList. The difference between a singly LinkedList and a doubly LinkedList is whether a node has access to only the next node in the list or if a node has access to both the previous and next nodes. A LinkedList with access to only the next node in the list is referred to as a singly LinkedList, while a LinkedList with nodes having access to their previous node in addition to the next node makes the list a doubly LinkedList.
             </div>
             
             <h1 class="headerLeft">Singly LinkedList</h1>
@@ -108,11 +108,11 @@
             <h1 class="headerCenter">Code Implementation</h1>
             
             <div class="paragraph">
-                In the singly LinkedList example, we have four node objects that each contain variables to store their integer value as well as a reference to the next node object in the list. The last node in the list is a special case since there is no object to point to, therefore its next reference will point to null. A LinkedList also requires a "Head" which provides a reference to the first node object in order to gain access to the list.
+                In the following code implemention, I will be exaplaining how to create a singly LinkedList from scratch. In the singly LinkedList example, we have four node objects that each contain variables to store their integer value as well as a reference to the next node object in the list. The last node in the list is a special case since there is no object to point to, therefore its next reference will point to null. A LinkedList also requires a "head" which provides a reference to the first node object in order to gain access to the list.
             </div>
             
             <div class="paragraph">
-                To begin the implementation of a LinkedList we must first create a class that will act as a container which holds the nodes in the list. We will initialize this class as 'LinkedList' and configure the class as paramatizable to allow the user to specify the type of data being stored in the list. 
+                To begin the implementation of a LinkedList we must first create a class that will act as a container which holds the nodes in the list. We will initialize this class as 'LinkedList' and configure the class to accept a generic object type to allow the user to specify the type of data being stored in the list. The generic typing is denoted by the angle brackets with the letter 'T' as a placeholder value. If you are unfamiliar with generic typing, just think of it as a way to allow users to select the type of data that the nodes should contain. 
             </div>
             
             <div class="code">
@@ -123,7 +123,7 @@
             </div>
             
             <div class="paragraph">
-                Once we have created our LinkedList class, we will need a way to create the nodes in our list. We can create these node objects by implementing a subclass called Node. The Node class will have a variable called 'data' which stores the value of the particular object and a Node variable called 'next' that points to the next node in the list. We will define a constructor inside of the Node class that will automatically assign the data variable to the value passed in by the user.
+                Once we have created our LinkedList class, we will need a way to create the nodes in our list. We can create these node objects by implementing a subclass called Node. The Node class will have a instance variable called 'data' which holds the contents of a node and a Node variable called 'next' that acts as a reference to the next node in the list. We will define a constructor inside of the Node class that will automatically assign the data variable to the value passed in by the user.
             </div>
             
             <div class="code">
@@ -173,7 +173,7 @@
             </div>
             
             <div class="paragraph">
-                We have completed the basic structure of a LinkedList, however this code is yet to be useful since we are lacking a few of the basic methods that allow us to add and remove items from the list.
+                We have completed the basic structure of a LinkedList, however this class is not very useful since we are lacking a few of the fundamental methods that allow us to add and remove items from the list.
             </div>
             
             <div class="paragraph noTopPadding">
@@ -212,7 +212,7 @@
             <h2 class="headerCenter doubleline">add() Method</h2>
             
             <div class="paragraph">
-                The add() method allows us to create nodes and connect these nodes to our existing list. The logic behind this method is to traverse the entire list until reaching the last node in the list. We can then append this node to the end of the list. To determine if we have reached the last item in the list we can walk through each node until we find that the next node is equal to null. If the list is completely empty (head == null) then we know that we can assign head to this new node.
+                The add() method allows us to create nodes and connect these nodes to our existing list. The logic behind this method is to traverse the existing list until reaching the last node in the list. We can then append this new node to the end of the list. To determine the last item in the list, we know that the last node will always have a 'next' value of null. Thus starting from the head of the list, we continue to traverse to the next node in the list as long as there is a valid node to traverse to. An edge case to consider is if the list is completely empty (head == null) and we are adding the first item to the list. Since an empty list basically means that we are at the end of the list, we can assign the head pointer to the new node.
             </div>
             
             <div class="code">
@@ -323,6 +323,10 @@
                                 <br><br>
                                 
                                 &bull;&nbsp;When removing an item from the start of the list, this operation can be performed in constant time O(1) which is extremely quick and efficient
+                                
+                                <br><br>
+                                
+                                &bull;&nbsp;LinkedLists are mutable which means that they are not restricted by size and items can continuously be added to the list
                             </td>
                             
                             <td class="tableEntry">

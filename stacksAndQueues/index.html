@@ -33,7 +33,7 @@
         <div class="navbar">
             <!--Home-->
             <div class="dropdown" id="dropdownHome">
-                <a class="mainHeader" id="headerHome" href="../index.html">Home</a>
+                <a class="mainHeader" id="headerHome" href="../">Home</a>
             </div>
             
             <!--Data Structures-->
@@ -91,7 +91,7 @@
             </div>
             
             <div class="paragraph noTopPadding">
-                A stack data structure can be compared to a physical stack of plates where each new plate added to the stack must be placed on top of the last plate added. When a plate is taken off the stack it must be removed from the top or else the entire stack will collapse. This concept is represented by the term ‘LIFO’ (Last In First Out) because the last item added to the stack will be the first item removed. Data that is pushed to the stack is added to the top of the list and when data is popped from the stack then the top most item in the list will be removed.
+                A stack data structure can be compared to a physical stack of plates where each new plate added to the stack must be placed on top of the last plate added. When a plate is taken off of the stack it must be removed from the top or else the entire stack will collapse. This concept is represented by the term ‘LIFO’ (Last In First Out) because the last item added to the stack will be the first item removed. Data that is pushed to the stack is added to the top of the list and when data is popped from the stack then the top most item in the list will be removed.
             </div>
             
             <div class="sectionImageTall">
@@ -195,7 +195,7 @@
             </div>
             
             <div class="paragraph">
-                Four basic methods involved with the stack data structure is to add items, remove items, check if the stack is empty, and to retrive the top item in the stack. These four functions are described below:
+                Four basic methods involved with the stack data structure is to add items, remove items, check if the stack is empty, and to retrieve the top item in the stack. These four methods are described below:
                 <br><br>
                 <p class="codePurple">isEmpty():</p> Returns whether a list is empty or not 
                 <br><br>
@@ -209,7 +209,7 @@
             <h2 class="headerCenter doubleline">isEmpty() Method</h2>
             
             <div class="paragraph">
-                The isEmpty() method is a very straight forward method. If our list is empty then that means the top node has not been assigned to a value. The method will check to see what the top node is assigned to and return whether the list is empty or not.
+                The isEmpty() method is a very straight forward method. If our list is empty then that means the top node has not been assigned to a value. The method will check to see what the top node is assigned to and returns whether the list is empty or not.
             </div>
             
             <div class="code">
@@ -230,7 +230,7 @@
             <h2 class="headerCenter doubleline">push(T data) Method</h2>
             
             <div class="paragraph">
-                The push() method allows us to create nodes and connect these nodes to our existing list. The logic behind this method is to connect the new node to the current top node and to set the new node to the new top. If the list is completely empty (top == null) then we know that we can assign the new node to top since this will be the first item in the stack.
+                The push() method allows us to create nodes and connect these nodes to our existing list. The logic behind this method is to connect the new node to the current top node in the list then to move the top pointer to point to the new node being added. If the list is completely empty (top == null) then we know that we can assign the new node to top since this will be the first item in the stack.
             </div>
             
             <div class="code">
@@ -257,7 +257,7 @@
             <h2 class="headerCenter doubleline">pop() Method</h2>
             
             <div class="paragraph">
-                The pop() method deletes the most recent item added to the stack which is whichever node is assigned to the top variable. To remove a node from the stack, all we have to do is move the top variable to point to the next node in the stack sequence. Prior to deleting the node, we want to store the data in the node in a variable so that we can return it at the end of the method. If the stack is completely empty and a user attempts to remove an item, the method will automatically return null and exit.
+                The pop() method deletes the most recent item added to the stack which is whichever node is assigned to the top variable. To remove a node from the stack, all we have to do is move the top variable to point to the next node in the stack sequence. Prior to deleting the node, we want to store the data in the node into a variable so that we can return it at the end of the method. If the stack is completely empty and a user attempts to remove an item, the method will automatically return null and exit.
             </div>
             
             <div class="code">
@@ -332,7 +332,7 @@
             </div>
             
             <div class="paragraph">
-                Similar to a stack, we have the same four basic methods that need to be included in this Queue class however the push() and pop() methods will slightly different in implementation to satisfy the concept of FIFO. These four functions are described below:
+                Similar to a stack, we have the same four basic methods that need to be included in this Queue class however the push() and pop() methods will slightly differ in implementation to satisfy the concept of FIFO. These four methods are described below:
                 <br><br>
                 <p class="codePurple">isEmpty():</p> Returns whether a list is empty or not 
                 <br><br>
@@ -346,7 +346,7 @@
             <h2 class="headerCenter doubleline">isEmpty() Method</h2>
             
             <div class="paragraph">
-                The isEmpty() method is a very straight forward method. If our list is empty then that means both the head and tail nodes have not been assigned a value. The method only needs to check if either one of the head or tail nodes is null, however we can add some safety to our code by checking to make sure they are both null in cases we forgot to update these node variables in the push and pop methods.
+                The isEmpty() method is a very straight forward method. If our list is empty then that means both the head and tail nodes have not been assigned a value. The method only needs to check if either one of the head or tail nodes is null, however we can add some safety to our code by checking to make sure they are both null in cases we forgot to update these node variables in the push() and pop() methods.
             </div>
             
             <div class="code">
@@ -367,7 +367,7 @@
             <h2 class="headerCenter doubleline">push(T data) Method</h2>
             
             <div class="paragraph">
-                The push() method allows us to create nodes and connect these nodes to the end of the list. The logic behind this method is to connect the existing tail node to the new node and update the tail variable to point to the new node. If the list is completely empty (head == null && tail == null) then we know that both the head and tail variable must be assigned to this new node.
+                The push() method allows us to create nodes and connect these nodes to the end of the list. The logic behind this method is to connect the existing tail node to the new node and update the tail variable to point to the new node. If the list is completely empty (head == null && tail == null) then we know that both the head and tail variables must be assigned to this new node.
             </div>
             
             <div class="code">
@@ -427,7 +427,7 @@
             <h2 class="headerCenter doubleline">peek() Method</h2>
             
             <div class="paragraph">
-                The peek() method is very straight forward since we have access to the head variable. All we have to do is return the data contained in the head node assumming that the queue is not empty. If the queue is empty we will return null.
+                The peek() method is very straight forward since we have access to the head variable. All we have to do is return the data contained in the node that the head pointer is pointing to assumming that the queue is not empty. If the queue is empty we will return null.
             </div>
             
             <div class="code">

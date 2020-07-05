@@ -33,7 +33,7 @@
         <div class="navbar">
             <!--Home-->
             <div class="dropdown" id="dropdownHome">
-                <a class="mainHeader" id="headerHome" href="../index.html">Home</a>
+                <a class="mainHeader" id="headerHome" href="../">Home</a>
             </div>
             
             <!--Data Structures-->
@@ -87,11 +87,11 @@
             <h1 class="headerCenter">Arrays</h1>
             
             <div class="paragraph">
-                Arrays are one of the most fundamental concepts in programming and are usually the first data structure introduced to beginner programmers. An array is simply a continuous list of storage containers that can hold a wide variety of data. The advantage of using an array is that the data contained inside can be accessed relatively quickly and are stored in an organized sequence.
+                Arrays are one of the most fundamental concepts in programming and are usually the first data structure introduced to programmers. An array is simply a continuous list of storage containers that holds data. In addition to this, the containers in an array are referred to by their index position starting from 0 on the left most container and increasing by 1 for each container to the right. The advantage of using an array is that the data contained inside of it can be accessed relatively quickly by its index value.
             </div>
             
             <div class="paragraph">
-                It may be difficult to completely grasp the abstract concept of arrays at first since it is represented as a virtual container in your computer. However, as a visual learner I found it helpful to compare arrays to a physical box that contains books. Suppose you had 10 books that you wanted to organize neatly so that you can quickly find the book if you ever needed to. Immediately, you would think to find a box that could perfectly fit all 10 of the books. This is similar to creating an array to hold a certain amount of data. The array itself would represent the book container, while the data inside of the array would be represented by the actual books.
+                Grasping the abstract concept of arrays can be difficult at first since they are represented as virtual containers in your computer. However, I found it helpful to compare arrays to a physical box used to contain books. Using this analogy, suppose you had 10 books that you wanted to organize neatly so that you could quickly find a book if you ever needed to. Immediately, you would think to find a box that could perfectly fit all 10 of the books. This is similar to creating an array to hold a certain amount of data. The array itself would represent the book container, while the data inside of the array would represent the actual books.
             </div>
             
             <div class="sectionImage">
@@ -99,11 +99,11 @@
             </div>
             
             <div class="paragraph">
-                We can take this analogy one step further by describing how the size of an array is defined. If we think about our book container, we want the container to have 10 slots to hold 10 books. Similarly, we define the size of the array by specifying how many items we want the array to contain. Now if we purchased an 11th book we would not be able to fit it in our container as it would break the box. An array works the exact same way where if we have more data than storage slots we would not be able to added it to our array. To fit the 11th book into our container, we must find a larger container that can fit 11 or more books then move all the books from the old container to our larger one. And as you have guessed, this is the same as an array as a new array must be initialized then each of the items in the old array must be copied to the new array prior to adding the new item. 
+                We can take this analogy one step further by describing how the size of an array is defined. If we think about our book container, we want the container to have 10 slots to hold all 10 books. Similarly, we define the size of the array by specifying how many items we want the array to contain. Now if we purchased an 11th book we would not be able to fit it in our container as it would break the box. An array works the exact same way where if we have more data than storage slots we would not be able to added it to our array. To fit the 11th book into our container, we must find a larger container that can fit 11 or more books then move all the books from the old container to our larger one. And as you have probably guessed this is the same for an array, as a new array of larger size must be initialized then each of the items in the old array must be copied to the new array prior to adding the new item. 
             </div>
             
             <div class="paragraph">
-                One important question to ask is why wouldn't we just define an array that can hold a very large number of items so we don't have to worry about running out of storage containers? The simple answer is that the larger the array size the more memory it takes up in the computer which could be allocated for other purposes. This same question could be asked about our book container, why not find a container that can fit 100 books? or 1000 books? The answer is that if we used a container that could hold up to 1000 books to store only 10 of our books then the rest of the container would just be taking up space in our room which could be used to place other items such as a bed or a desk. We want to be as efficient with our physical space as possible and this goes for the space/memory we use in the programs we write.
+                One important question to ask is why wouldn't we just define an array that can hold a very large amount of data so we don't have to worry about running out of storage containers? The simple answer is that the larger the array size the more memory it takes up in the computer which could be allocated for other purposes. This same question could be asked about our book container, why not find a container that can fit 100 books? or 1000 books? The answer is that if we used a container that could hold up to 1000 books to store only 10 books then the rest of the container would just be taking up space in our room which could be used to place other items such as a bed or a desk. We want to be as efficient with our physical space as possible and this goes for the space/memory we use in the programs we write.
             </div>
         </div>
         
@@ -153,7 +153,11 @@
             </div>
             
             <div class="paragraph">
-                The second technique to creating an array is when we know exactly what data should be inside of our array. Suppose we know all 10 heights of our students, we can directly add these heights(represented in cm) to our array when we first initialize it.
+                Once we obtain the heights of all 10 students, we can go back and update each index position of the array with the correct height value.
+            </div>
+            
+            <div class="paragraph">
+                The second technique to creating an array is when we know exactly what data should be inside of the array. Suppose we know all 10 heights of our students, we can directly add these heights(represented in cm) to our array as we initialize it.
             </div>
             
             <div class="code codeWideFinal">
@@ -161,7 +165,7 @@
             </div>
             
             <div class="paragraph">
-                Instead of creating the array then updating the value of each position with the proper value, we have shown that we can complete this task in one line of code. Being able to create an array is important, however the real power of arrays comes from being able to update and manipulate the values inside. This brings us to the next topic of accessing data in an array.
+                Instead of creating the array then updating the value at each position, we have shown that we can complete this task in one line of code. Being able to create an array is important, however the real power of arrays comes from being able to update and manipulate the values inside. This brings us to the next topic of accessing data in an array.
             </div>
         </div>
     
@@ -172,7 +176,7 @@
             <h1 class="headerCenter">Accessing Array Data</h1>
             
             <div class="paragraph">
-                Being able to quickly retrieve data from an array is one of the huge advantages of this data structure. Accessing data from an array is fairly straight forward, all we have to do is type the name of the array followed by square brackets and entering the values location inside of the square brackets. This brings us to the next important topic of arrays which is indexing. 
+                Being able to quickly retrieve data from an array is one of the huge advantages of this data structure. Accessing data from an array is fairly straight forward, all we have to do is type the name of the array followed by square brackets and entering the index position of the value we want to access inside of the square brackets. This brings us to the next important topic of arrays which is indexing. 
             </div>
             
             <div class="paragraph">
@@ -203,7 +207,7 @@
             <h1 class="headerCenter">Additional Array Concepts</h1>
             
             <div class="paragraph">
-                So far we have only skimmed the surface of arrays, but have built a strong understanding of the fundamentals of this data structure. There are many advanced topics of arrays that you should be familar with in order to become a master of this data structure. Below is a list of more advanced topics that you can seek out on your own if you are interested in learning more about arrays. Hopefully I will be able to create content on these topics in the future.
+                So far we have only skimmed the surface of arrays, but have built a strong understanding of the fundamentals of this data structure. There are many advanced topics of arrays that you should be familar with in order to become a master of this data structure. Below is a list of more advanced topics that I hope I will be able to create content for in the future.
             </div>
             
             <div class="paragraph noTopPadding">
