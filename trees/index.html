@@ -33,7 +33,7 @@
         <div class="navbar">
             <!--Home-->
             <div class="dropdown" id="dropdownHome">
-                <a class="mainHeader" id="headerHome" href="../index.html">Home</a>
+                <a class="mainHeader" id="headerHome" href="../">Home</a>
             </div>
             
             <!--Data Structures-->
@@ -95,7 +95,7 @@
             </div>
             
             <div class="paragraph">
-                In many programming examples, the trees are defined to be binary trees which sets the constraint that all of the nodes in the tree can only have either 0, 1, or 2 child nodes (hence the term binary). 
+                In many programming exercises, the trees are defined as binary trees which sets the constraint that all of the nodes in the tree can only have either 0, 1, or 2 child nodes (hence the term binary). 
             </div>
             
             <div class="sectionImage">
@@ -103,7 +103,7 @@
             </div>
             
             <div class="paragraph">
-                Furthermore, a binary tree can be even more specialized if it is a binary search tree. A binary search tree must not only adhere to the constraints of a binary tree, but it must also fit the property that all the nodes on the left side must have a smaller value than the parent node and all the nodes on the right side must have a larger value than the parent node. This constraint must be followed by all the nodes in the tree.
+                Furthermore, a binary tree can be even more specialized if it is a binary search tree. A binary search tree must not only adhere to the constraints of a binary tree, but it must also fit the condition that all the nodes on the left side must have a smaller value than the parent node and all the nodes on the right side must have a larger value than the parent node. This constraint must be followed by all the nodes in the tree.
             </div>
             
             <div class="sectionImage">
@@ -142,7 +142,7 @@
             <h1 class="headerCenter">Binary Search Tree - Code Implementation</h1>
             
             <div class="paragraph">
-                One of the most common types of tree data structures are binary search trees and we will be implementing this type of tree in the code below. As we can recall, a binary search tree is a tree where the each node has up to two child nodes and that the values of the left nodes are less than the parent node while the values of the right nodes are greater than the parent node.
+                One of the most common types of tree data structures are binary search trees and we will be implementing this type of tree in the code below. As we can recall, a binary search tree is a tree where each node has up to two child nodes and that the values of the left child nodes are less than the parent node while the values of the right child nodes are greater than the parent node.
             </div>
             
             <div class="paragraph noTopPadding">
@@ -168,7 +168,7 @@
             </div>
             
             <div class="paragraph">
-                To finish off the basic structure of the binary search tree, we will add a method which will allow us to add data to the tree. This method is pretty straight forward as it will check to see if the new value we want to add is less than or greater than our root node's value. If the value is less than the root node it will check to see if the left node is occupied and if it is then a recursive call to the function will be made passing in the left node. If the left node is not occupied then the value will be placed in that node location. The same logic is applied to the right side of the tree if the new value is greater than the root node's value.  
+                To finish off the basic structure of the binary search tree, we will add a method which will allow us to add data to the tree. This method is pretty straight forward as it will check to see if the new value we want to add is less than or greater than the root node's value. If the value is less than the root node we will check to see if the left child node is occupied and if it is then a recursive call to the function will be made using the left node. If the left node is not occupied then the value will be placed in that node location. The same logic is applied to the right side of the tree if the new value is greater than the root node's value.  
             </div>
             
             <div class="code codeWideFinal">
@@ -330,7 +330,7 @@
             
             <h1 class="headerLeft">In-Order Traversal</h1>
             <div class="paragraph">
-                The in-order traversal will print the left node, parent node, then right node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
+                The in-order traversal will print the left node, parent node, then right node value in that order. If the left or right nodes have child nodes then a recursive call must be made.
             </div>
             <div class="code codeWide">
                 <p class="indent codePurple">public static void</p> inOrderTraversal(TreeNode parent){
@@ -363,7 +363,7 @@
             
             <h1 class="headerLeft">Pre-Order Traversal</h1>
             <div class="paragraph">
-                The pre-order traversal will print the parent node, left node, then right node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
+                The pre-order traversal will print the parent node, left node, then right node value in that order. If the left or right nodes have child nodes then a recursive call must be made.
             </div>
             <div class="code codeWideFinal">
                 <p class="indent codePurple">public static void</p> preOrderTraversal(TreeNode parent){
@@ -396,7 +396,7 @@
             
             <h1 class="headerLeft">Post-Order Traversal</h1>
             <div class="paragraph">
-                The post-order traversal will print the left node, right node, then parent node value in that order. If the left or right nodes have child nodes then a recusive call must be made.
+                The post-order traversal will print the left node, right node, then parent node value in that order. If the left or right nodes have child nodes then a recursive call must be made.
             </div>
             <div class="code codeWideFinal">
                 <p class="indent codePurple">public static void</p> postOrderTraversal(TreeNode parent){
