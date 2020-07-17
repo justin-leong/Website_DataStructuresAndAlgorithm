@@ -504,7 +504,7 @@ body {
 /*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
 /*------------------------------------------------------
-LinkedLists
+Data Structures and Algorithms
 -------------------------------------------------------*/
 .sectionDivider{
     width: 800px; /*1250 1000*/
@@ -680,6 +680,7 @@ Sorting Visualizer - Project
     border-radius: 50px;
     color: white;
     background-color: black;
+    outline: none;
 }
 
 
