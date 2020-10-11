@@ -1,11 +1,11 @@
 # CoffeeCodeCoffee
 www.coffeecodecoffee.com
 
-<img src="readmeImages/coffeecodecoffee.png" width="200">
+<img src="readmeImages/coffeecodecoffee.png" width="100">
 
 CoffeeCodeCoffee is a personal project I started as a way to practice and learn about frontend web development. This website was created using purely HTML, CSS, and JavaScript to improve my skills using these three core web development tools. In this website, I share my knowledge of key software engineering concepts related to data structures and algorithms. In each topic, I explain and reconstruct the concept from scratch while showcasing snippets of code in Java. My goal is to be able to share my knowledge with those who have a passion for coding and to continue to improve my own skills along the way!
 
-<img src="readmeImages/dataStructuresAndAlgorithms.PNG" width="200">
+<img src="readmeImages/dataStructuresAndAlgorithms.PNG" width="500">
 
 Each data structure and algorithm has its own page where I describe the high level functionality then implement it step by step in code. Below is a small sample of some of the content in the linked list data structure and depth first search algorithm pages.
 
